@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="Content/font-awesome.min.css" />
+    <style type="text/css">
+        html, body, input, textarea, keygen, select, button, a {
+            font-family: Times New Roman;
+            font-size: 12pt;
+        }
+
+        .btnLuu {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .myButton {
+            font-size: 20px;
+            font-weight: bold !important;
+            color: white !important;
+            background-color: #8b4513 !important;
+            padding: 5px;
+            float: right;
+            border: none !important;
+            margin-right: 34px;
+            margin-top: 5px;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .myButtonCenter {
+            font-size: 24px !important;
+            font-weight: bold !important;
+            color: white;
+            background-color: #000080;
+            padding: 5px;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .editButton {
+            color: white !important;
+            background-color: #8b4513 !important;
+            padding: 5px;
+            border: none !important;
+            font-size: 18px !important;
+            font-weight: bold;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .cssPanel fieldset {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+
+
+        .cssPanel legend {
+            font-weight: bold;
+        }
+
+
+        .cssPanel input, .cssPanel select {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .cssPanel td input, .cssPanel td select {
+            margin-right: 20px;
+        }
+
+        #ctl00_ContentPlaceHolder_GridDangVien th, #ctl00_ContentPlaceHolder_GridDangVien td {
+            border: 1px solid #D2D2D2;
+        }
+
+
+        input[type="submit"] {
+            font: normal normal normal 14px/1 FontAwesome;
+        }
+
+        .header {
+            color: white !important;
+            background-color: #2A732D !important;
+            padding: 20px;
+            border: none !important;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #ffffe0;
+            height: 35px;
+            margin: 30px 0 30px 0;
+        }
+
+        .back a {
+            text-decoration: blink;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #ff1493;
+            padding: 5px;
+            color: white;
+            float: right;
+        }
+
+        #ctl00_ContentPlaceHolder_PanelSoYeuLyLich, #ctl00_ContentPlaceHolder_PanelSoYeuLyLich input, #ctl00_ContentPlaceHolder_PanelSoYeuLyLich select,
+        #ctl00_ContentPlaceHolder_PanelThongTinTuyenDung, #ctl00_ContentPlaceHolder_PanelThongTinTuyenDung input, #ctl00_ContentPlaceHolder_PanelThongTinTuyenDung select,
+        #ctl00_ContentPlaceHolder_PanelThongTinDoanThe, #ctl00_ContentPlaceHolder_PanelThongTinDoanThe input, #ctl00_ContentPlaceHolder_PanelThongTinDoanThe select,
+        #ctl00_ContentPlaceHolder_PanelThongTinChuyenMon, #ctl00_ContentPlaceHolder_PanelThongTinChuyenMon input, #ctl00_ContentPlaceHolder_PanelThongTinChuyenMon select,
+        #ctl00_ContentPlaceHolder_PanelThongTinCongChuc, #ctl00_ContentPlaceHolder_PanelThongTinCongChuc input, #ctl00_ContentPlaceHolder_PanelThongTinCongChuc select,
+        #ctl00_ContentPlaceHolder_PanelThongTinKhenThuong, #ctl00_ContentPlaceHolder_PanelThongTinKhenThuong input, #ctl00_ContentPlaceHolder_PanelThongTinKhenThuong select,
+        #ctl00_ContentPlaceHolder_PanelThongTinSucKhoe, #ctl00_ContentPlaceHolder_PanelThongTinSucKhoe input, #ctl00_ContentPlaceHolder_PanelThongTinSucKhoe select,
+        #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh, #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh input, #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh select {
+
+            
+            pointer-events: none;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

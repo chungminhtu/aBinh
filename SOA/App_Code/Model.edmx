@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CoSoDuLieuTichHopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CoSoDuLieuTichHopModelStoreContainer">
+          <EntitySet Name="CanBo" EntityType="CoSoDuLieuTichHopModel.Store.CanBo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DangVien" EntityType="CoSoDuLieuTichHopModel.Store.DangVien" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KyLuat" EntityType="CoSoDuLieuTichHopModel.Store.KyLuat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="CoSoDuLieuTichHopModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ViewALLCB" EntityType="CoSoDuLieuTichHopModel.Store.ViewALLCB" store:Type="Views" store:Schema="dbo" store:Name="ViewALLCB">
+            <DefiningQuery>SELECT 
+      [ViewALLCB].[ID] AS [ID], 
+      [ViewALLCB].[HoTenKhaiSinh] AS [HoTenKhaiSinh], 
+      [ViewALLCB].[TenGoiKhac] AS [TenGoiKhac], 
+      [ViewALLCB].[NgaySinh] AS [NgaySinh], 
+      [ViewALLCB].[GioiTinh] AS [GioiTinh], 
+      [ViewALLCB].[HoKhauThuongTru] AS [HoKhauThuongTru], 
+      [ViewALLCB].[NoiSinh] AS [NoiSinh], 
+      [ViewALLCB].[QueQuanTinh] AS [QueQuanTinh], 
+      [ViewALLCB].[QueQuanHuyen] AS [QueQuanHuyen], 
+      [ViewALLCB].[QueQuanXa] AS [QueQuanXa], 
+      [ViewALLCB].[NoiOHienNay] AS [NoiOHienNay], 
+      [ViewALLCB].[DanToc] AS [DanToc], 
+      [ViewALLCB].[TonGiao] AS [TonGiao], 
+      [ViewALLCB].[ThanhPhanGiaDinh] AS [ThanhPhanGiaDinh], 
+      [ViewALLCB].[TinhTrangHonNhan] AS [TinhTrangHonNhan], 
+      [ViewALLCB].[SoCMND] AS [SoCMND], 
+      [ViewALLCB].[NgayCapCMND] AS [NgayCapCMND], 
+      [ViewALLCB].[NoiCapCMND] AS [NoiCapCMND], 
+      [ViewALLCB].[Anh4x6] AS [Anh4x6], 
+      [ViewALLCB].[Email] AS [Email], 
+      [ViewALLCB].[SDT] AS [SDT], 
+      [ViewALLCB].[NgheNghiepKhiTuyenDung] AS [NgheNghiepKhiTuyenDung], 
+      [ViewALLCB].[NgayTuyenDung] AS [NgayTuyenDung], 
+      [ViewALLCB].[TenCoQuanTuyenDung] AS [TenCoQuanTuyenDung], 
+      [ViewALLCB].[NgayVaoCoQuanHienTai] AS [NgayVaoCoQuanHienTai], 
+      [ViewALLCB].[NgayNhapNgu] AS [NgayNhapNgu], 
+      [ViewALLCB].[NgayXuatNgu] AS [NgayXuatNgu], 
+      [ViewALLCB].[QuanHamCaoNhat] AS [QuanHamCaoNhat], 
+      [ViewALLCB].[TrinhDoHocVan] AS [TrinhDoHocVan], 
+      [ViewALLCB].[HocHam] AS [HocHam], 
+      [ViewALLCB].[HocVi] AS [HocVi], 
+      [ViewALLCB].[TrinhDoQuanLyNhaNuoc] AS [TrinhDoQuanLyNhaNuoc], 
+      [ViewALLCB].[TrinhDoLyLuanChinhTri] AS [TrinhDoLyLuanChinhTri], 
+      [ViewALLCB].[TrinhDoChuyenMonCaoNhat] AS [TrinhDoChuyenMonCaoNhat], 
+      [ViewALLCB].[ChuyenNganh] AS [ChuyenNganh], 
+      [ViewALLCB].[TrinhDoTinHoc] AS [TrinhDoTinHoc], 
+      [ViewALLCB].[TrinhDoNgoaiNguThuNhat] AS [TrinhDoNgoaiNguThuNhat], 
+      [ViewALLCB].[NgoaiNguThuNhat] AS [NgoaiNguThuNhat], 
+      [ViewALLCB].[TrinhDoNgoaiNguThuHai] AS [TrinhDoNgoaiNguThuHai], 
+      [ViewALLCB].[NgoaiNguThuHai] AS [NgoaiNguThuHai], 
+      [ViewALLCB].[KhenThuong] AS [KhenThuong], 
+      [ViewALLCB].[KyLuat] AS [KyLuat], 
+      [ViewALLCB].[TinhTrangSucKhoe] AS [TinhTrangSucKhoe], 
+      [ViewALLCB].[LaThuongBinh] AS [LaThuongBinh], 
+      [ViewALLCB].[SoHieuCB] AS [SoHieuCB], 
+      [ViewALLCB].[DoiTuong] AS [DoiTuong], 
+      [ViewALLCB].[HuongLuong] AS [HuongLuong], 
+      [ViewALLCB].[DonViQuanLy] AS [DonViQuanLy], 
+      [ViewALLCB].[DonViCongTac] AS [DonViCongTac], 
+      [ViewALLCB].[MaNgachCongChuc] AS [MaNgachCongChuc], 
+      [ViewALLCB].[NgayHuong] AS [NgayHuong], 
+      [ViewALLCB].[BacLuong] AS [BacLuong], 
+      [ViewALLCB].[HeSoLuong] AS [HeSoLuong], 
+      [ViewALLCB].[ChucVuHienTai] AS [ChucVuHienTai], 
+      [ViewALLCB].[ChucVuKiemNhiem] AS [ChucVuKiemNhiem], 
+      [ViewALLCB].[PhuCapChucVu] AS [PhuCapChucVu], 
+      [ViewALLCB].[CongViecChinhDangLam] AS [CongViecChinhDangLam], 
+      [ViewALLCB].[NgayVaoDang] AS [NgayVaoDang], 
+      [ViewALLCB].[ChiBoKetNap] AS [ChiBoKetNap], 
+      [ViewALLCB].[NguoiGioiThieu1] AS [NguoiGioiThieu1], 
+      [ViewALLCB].[ChucVuNguoiGioiThieu1] AS [ChucVuNguoiGioiThieu1], 
+      [ViewALLCB].[NgheNghiepKhiVaoDang] AS [NgheNghiepKhiVaoDang], 
+      [ViewALLCB].[NguoiGioiThieu2] AS [NguoiGioiThieu2], 
+      [ViewALLCB].[GhiChuVeNguoiGioiThieu2] AS [GhiChuVeNguoiGioiThieu2], 
+      [ViewALLCB].[NgayChinhThucVaoDang] AS [NgayChinhThucVaoDang], 
+      [ViewALLCB].[SoLyLichDangVien] AS [SoLyLichDangVien], 
+      [ViewALLCB].[SoTheDangVien] AS [SoTheDangVien], 
+      [ViewALLCB].[MaCoSoDangQLDangVien] AS [MaCoSoDangQLDangVien], 
+      [ViewALLCB].[ChucVuTrongDang] AS [ChucVuTrongDang], 
+      [ViewALLCB].[NgayBiKyluat] AS [NgayBiKyluat], 
+      [ViewALLCB].[LyDoKyLuat] AS [LyDoKyLuat]
+      FROM [dbo].[ViewALLCB] AS [ViewALLCB]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="CanBo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HoTenKhaiSinh" Type="nvarchar" MaxLength="500" />
+          <Property Name="TenGoiKhac" Type="nvarchar" MaxLength="500" />
+          <Property Name="NgaySinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="HoKhauThuongTru" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoiSinh" Type="nvarchar" MaxLength="500" />
+          <Property Name="QueQuanTinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="QueQuanHuyen" Type="nvarchar" MaxLength="50" />
+          <Property Name="QueQuanXa" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoiOHienNay" Type="nvarchar" MaxLength="50" />
+          <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+          <Property Name="TonGiao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThanhPhanGiaDinh" Type="nvarchar" MaxLength="100" />
+          <Property Name="TinhTrangHonNhan" Type="nvarchar" MaxLength="100" />
+          <Property Name="SoCMND" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayCapCMND" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoiCapCMND" Type="nvarchar" MaxLength="100" />
+          <Property Name="Anh4x6" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgheNghiepKhiTuyenDung" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgayTuyenDung" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenCoQuanTuyenDung" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgayVaoCoQuanHienTai" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayXuatNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuanHamCaoNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoHocVan" Type="nvarchar" MaxLength="100" />
+          <Property Name="HocHam" Type="nvarchar" MaxLength="100" />
+          <Property Name="HocVi" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoQuanLyNhaNuoc" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoLyLuanChinhTri" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoChuyenMonCaoNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="ChuyenNganh" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoTinHoc" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoNgoaiNguThuNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgoaiNguThuNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoNgoaiNguThuHai" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgoaiNguThuHai" Type="nvarchar" MaxLength="100" />
+          <Property Name="KhenThuong" Type="nvarchar" MaxLength="500" />
+          <Property Name="KyLuat" Type="nvarchar" MaxLength="500" />
+          <Property Name="TinhTrangSucKhoe" Type="nvarchar" MaxLength="100" />
+          <Property Name="LaThuongBinh" Type="nvarchar" MaxLength="100" />
+          <Property Name="SoHieuCB" Type="nvarchar" MaxLength="50" />
+          <Property Name="DoiTuong" Type="nvarchar" MaxLength="100" />
+          <Property Name="HuongLuong" Type="nvarchar" MaxLength="100" />
+          <Property Name="DonViQuanLy" Type="nvarchar" MaxLength="100" />
+          <Property Name="DonViCongTac" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaNgachCongChuc" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayHuong" Type="nvarchar" MaxLength="50" />
+          <Property Name="BacLuong" Type="int" />
+          <Property Name="HeSoLuong" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="ChucVuHienTai" Type="nvarchar" MaxLength="500" />
+          <Property Name="ChucVuKiemNhiem" Type="nvarchar" MaxLength="500" />
+          <Property Name="PhuCapChucVu" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="CongViecChinhDangLam" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="DangVien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NgayVaoDang" Type="nvarchar" MaxLength="20" />
+          <Property Name="ChiBoKetNap" Type="nvarchar" MaxLength="200" />
+          <Property Name="NguoiGioiThieu1" Type="nvarchar" MaxLength="200" />
+          <Property Name="ChucVuNguoiGioiThieu1" Type="nvarchar" MaxLength="200" />
+          <Property Name="NgheNghiepKhiVaoDang" Type="nvarchar" MaxLength="200" />
+          <Property Name="NguoiGioiThieu2" Type="nvarchar" MaxLength="200" />
+          <Property Name="GhiChuVeNguoiGioiThieu2" Type="nvarchar" MaxLength="200" />
+          <Property Name="NgayChinhThucVaoDang" Type="nvarchar" MaxLength="200" />
+          <Property Name="SoLyLichDangVien" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoTheDangVien" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaCoSoDangQLDangVien" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChucVuTrongDang" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="KyLuat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NgayBiKyluat" Type="nvarchar" MaxLength="20" />
+          <Property Name="LyDoKyLuat" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\PROJECT\2016\ANH BINH _ DE TAI TOT NGHIEP\SOA\APP_DATA\COSODULIEUTICHHOP.MDF.dbo.ViewALLCB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewALLCB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="HoTenKhaiSinh" Type="nvarchar" MaxLength="500" />
+          <Property Name="TenGoiKhac" Type="nvarchar" MaxLength="500" />
+          <Property Name="NgaySinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="HoKhauThuongTru" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoiSinh" Type="nvarchar" MaxLength="500" />
+          <Property Name="QueQuanTinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="QueQuanHuyen" Type="nvarchar" MaxLength="50" />
+          <Property Name="QueQuanXa" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoiOHienNay" Type="nvarchar" MaxLength="50" />
+          <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+          <Property Name="TonGiao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThanhPhanGiaDinh" Type="nvarchar" MaxLength="100" />
+          <Property Name="TinhTrangHonNhan" Type="nvarchar" MaxLength="100" />
+          <Property Name="SoCMND" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayCapCMND" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoiCapCMND" Type="nvarchar" MaxLength="100" />
+          <Property Name="Anh4x6" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgheNghiepKhiTuyenDung" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgayTuyenDung" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenCoQuanTuyenDung" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgayVaoCoQuanHienTai" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayXuatNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuanHamCaoNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoHocVan" Type="nvarchar" MaxLength="100" />
+          <Property Name="HocHam" Type="nvarchar" MaxLength="100" />
+          <Property Name="HocVi" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoQuanLyNhaNuoc" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoLyLuanChinhTri" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoChuyenMonCaoNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="ChuyenNganh" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoTinHoc" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoNgoaiNguThuNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgoaiNguThuNhat" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrinhDoNgoaiNguThuHai" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgoaiNguThuHai" Type="nvarchar" MaxLength="100" />
+          <Property Name="KhenThuong" Type="nvarchar" MaxLength="500" />
+          <Property Name="KyLuat" Type="nvarchar" MaxLength="500" />
+          <Property Name="TinhTrangSucKhoe" Type="nvarchar" MaxLength="100" />
+          <Property Name="LaThuongBinh" Type="nvarchar" MaxLength="100" />
+          <Property Name="SoHieuCB" Type="nvarchar" MaxLength="50" />
+          <Property Name="DoiTuong" Type="nvarchar" MaxLength="100" />
+          <Property Name="HuongLuong" Type="nvarchar" MaxLength="100" />
+          <Property Name="DonViQuanLy" Type="nvarchar" MaxLength="100" />
+          <Property Name="DonViCongTac" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaNgachCongChuc" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayHuong" Type="nvarchar" MaxLength="50" />
+          <Property Name="BacLuong" Type="int" />
+          <Property Name="HeSoLuong" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="ChucVuHienTai" Type="nvarchar" MaxLength="500" />
+          <Property Name="ChucVuKiemNhiem" Type="nvarchar" MaxLength="500" />
+          <Property Name="PhuCapChucVu" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="CongViecChinhDangLam" Type="nvarchar" MaxLength="500" />
+          <Property Name="NgayVaoDang" Type="nvarchar" MaxLength="20" />
+          <Property Name="ChiBoKetNap" Type="nvarchar" MaxLength="200" />
+          <Property Name="NguoiGioiThieu1" Type="nvarchar" MaxLength="200" />
+          <Property Name="ChucVuNguoiGioiThieu1" Type="nvarchar" MaxLength="200" />
+          <Property Name="NgheNghiepKhiVaoDang" Type="nvarchar" MaxLength="200" />
+          <Property Name="NguoiGioiThieu2" Type="nvarchar" MaxLength="200" />
+          <Property Name="GhiChuVeNguoiGioiThieu2" Type="nvarchar" MaxLength="200" />
+          <Property Name="NgayChinhThucVaoDang" Type="nvarchar" MaxLength="200" />
+          <Property Name="SoLyLichDangVien" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoTheDangVien" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaCoSoDangQLDangVien" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChucVuTrongDang" Type="nvarchar" MaxLength="200" />
+          <Property Name="NgayBiKyluat" Type="nvarchar" MaxLength="20" />
+          <Property Name="LyDoKyLuat" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CoSoDuLieuTichHopModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CoSoDuLieuTichHop" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CanBoes" EntityType="CoSoDuLieuTichHopModel.CanBo" />
+          <EntitySet Name="DangViens" EntityType="CoSoDuLieuTichHopModel.DangVien" />
+          <EntitySet Name="sysdiagrams" EntityType="CoSoDuLieuTichHopModel.sysdiagram" />
+          <EntitySet Name="KyLuats" EntityType="CoSoDuLieuTichHopModel.KyLuat" />
+          <EntitySet Name="ViewALLCBs" EntityType="CoSoDuLieuTichHopModel.ViewALLCB" />
+        </EntityContainer>
+        <EntityType Name="CanBo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTenKhaiSinh" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="TenGoiKhac" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="NgaySinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HoKhauThuongTru" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="NoiSinh" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="QueQuanTinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="QueQuanHuyen" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="QueQuanXa" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NoiOHienNay" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DanToc" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TonGiao" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ThanhPhanGiaDinh" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TinhTrangHonNhan" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SoCMND" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NgayCapCMND" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NoiCapCMND" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Anh4x6" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SDT" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NgheNghiepKhiTuyenDung" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="NgayTuyenDung" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TenCoQuanTuyenDung" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="NgayVaoCoQuanHienTai" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NgayNhapNgu" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NgayXuatNgu" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="QuanHamCaoNhat" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TrinhDoHocVan" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="HocHam" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="HocVi" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TrinhDoQuanLyNhaNuoc" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TrinhDoLyLuanChinhTri" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TrinhDoChuyenMonCaoNhat" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ChuyenNganh" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TrinhDoTinHoc" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TrinhDoNgoaiNguThuNhat" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="NgoaiNguThuNhat" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TrinhDoNgoaiNguThuHai" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="NgoaiNguThuHai" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="KhenThuong" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="KyLuat" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="TinhTrangSucKhoe" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="LaThuongBinh" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SoHieuCB" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DoiTuong" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="HuongLuong" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DonViQuanLy" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DonViCongTac" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MaNgachCongChuc" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NgayHuong" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BacLuong" Type="Int32" />
+          <Property Name="HeSoLuong" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="ChucVuHienTai" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ChucVuKiemNhiem" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="PhuCapChucVu" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="CongViecChinhDangLam" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DangVien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NgayVaoDang" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ChiBoKetNap" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="NguoiGioiThieu1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ChucVuNguoiGioiThieu1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="NgheNghiepKhiVaoDang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="NguoiGioiThieu2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="GhiChuVeNguoiGioiThieu2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="NgayChinhThucVaoDang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SoLyLichDangVien" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SoTheDangVien" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MaCoSoDangQLDangVien" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ChucVuTrongDang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="KyLuat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NgayBiKyluat" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LyDoKyLuat" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewALLCB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="HoTenKhaiSinh" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TenGoiKhac" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgaySinh" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GioiTinh" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HoKhauThuongTru" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NoiSinh" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QueQuanTinh" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QueQuanHuyen" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QueQuanXa" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NoiOHienNay" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DanToc" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TonGiao" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ThanhPhanGiaDinh" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TinhTrangHonNhan" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SoCMND" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayCapCMND" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NoiCapCMND" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Anh4x6" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SDT" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgheNghiepKhiTuyenDung" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayTuyenDung" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TenCoQuanTuyenDung" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayVaoCoQuanHienTai" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayNhapNgu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayXuatNgu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QuanHamCaoNhat" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrinhDoHocVan" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HocHam" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HocVi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrinhDoQuanLyNhaNuoc" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrinhDoLyLuanChinhTri" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrinhDoChuyenMonCaoNhat" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChuyenNganh" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrinhDoTinHoc" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrinhDoNgoaiNguThuNhat" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgoaiNguThuNhat" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrinhDoNgoaiNguThuHai" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgoaiNguThuHai" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KhenThuong" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KyLuat" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TinhTrangSucKhoe" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LaThuongBinh" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SoHieuCB" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DoiTuong" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HuongLuong" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DonViQuanLy" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DonViCongTac" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaNgachCongChuc" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayHuong" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BacLuong" />
+          <Property Type="Decimal" Name="HeSoLuong" Precision="8" Scale="2" />
+          <Property Type="String" Name="ChucVuHienTai" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChucVuKiemNhiem" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="PhuCapChucVu" Precision="8" Scale="2" />
+          <Property Type="String" Name="CongViecChinhDangLam" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayVaoDang" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChiBoKetNap" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NguoiGioiThieu1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChucVuNguoiGioiThieu1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgheNghiepKhiVaoDang" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NguoiGioiThieu2" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GhiChuVeNguoiGioiThieu2" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayChinhThucVaoDang" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SoLyLichDangVien" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SoTheDangVien" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaCoSoDangQLDangVien" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChucVuTrongDang" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NgayBiKyluat" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LyDoKyLuat" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CoSoDuLieuTichHopModelStoreContainer" CdmEntityContainer="CoSoDuLieuTichHop">
+          <EntitySetMapping Name="CanBoes">
+            <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.CanBo">
+              <MappingFragment StoreEntitySet="CanBo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HoTenKhaiSinh" ColumnName="HoTenKhaiSinh" />
+                <ScalarProperty Name="TenGoiKhac" ColumnName="TenGoiKhac" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="HoKhauThuongTru" ColumnName="HoKhauThuongTru" />
+                <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+                <ScalarProperty Name="QueQuanTinh" ColumnName="QueQuanTinh" />
+                <ScalarProperty Name="QueQuanHuyen" ColumnName="QueQuanHuyen" />
+                <ScalarProperty Name="QueQuanXa" ColumnName="QueQuanXa" />
+                <ScalarProperty Name="NoiOHienNay" ColumnName="NoiOHienNay" />
+                <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+                <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
+                <ScalarProperty Name="ThanhPhanGiaDinh" ColumnName="ThanhPhanGiaDinh" />
+                <ScalarProperty Name="TinhTrangHonNhan" ColumnName="TinhTrangHonNhan" />
+                <ScalarProperty Name="SoCMND" ColumnName="SoCMND" />
+                <ScalarProperty Name="NgayCapCMND" ColumnName="NgayCapCMND" />
+                <ScalarProperty Name="NoiCapCMND" ColumnName="NoiCapCMND" />
+                <ScalarProperty Name="Anh4x6" ColumnName="Anh4x6" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="NgheNghiepKhiTuyenDung" ColumnName="NgheNghiepKhiTuyenDung" />
+                <ScalarProperty Name="NgayTuyenDung" ColumnName="NgayTuyenDung" />
+                <ScalarProperty Name="TenCoQuanTuyenDung" ColumnName="TenCoQuanTuyenDung" />
+                <ScalarProperty Name="NgayVaoCoQuanHienTai" ColumnName="NgayVaoCoQuanHienTai" />
+                <ScalarProperty Name="NgayNhapNgu" ColumnName="NgayNhapNgu" />
+                <ScalarProperty Name="NgayXuatNgu" ColumnName="NgayXuatNgu" />
+                <ScalarProperty Name="QuanHamCaoNhat" ColumnName="QuanHamCaoNhat" />
+                <ScalarProperty Name="TrinhDoHocVan" ColumnName="TrinhDoHocVan" />
+                <ScalarProperty Name="HocHam" ColumnName="HocHam" />
+                <ScalarProperty Name="HocVi" ColumnName="HocVi" />
+                <ScalarProperty Name="TrinhDoQuanLyNhaNuoc" ColumnName="TrinhDoQuanLyNhaNuoc" />
+                <ScalarProperty Name="TrinhDoLyLuanChinhTri" ColumnName="TrinhDoLyLuanChinhTri" />
+                <ScalarProperty Name="TrinhDoChuyenMonCaoNhat" ColumnName="TrinhDoChuyenMonCaoNhat" />
+                <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+                <ScalarProperty Name="TrinhDoTinHoc" ColumnName="TrinhDoTinHoc" />
+                <ScalarProperty Name="TrinhDoNgoaiNguThuNhat" ColumnName="TrinhDoNgoaiNguThuNhat" />
+                <ScalarProperty Name="NgoaiNguThuNhat" ColumnName="NgoaiNguThuNhat" />
+                <ScalarProperty Name="TrinhDoNgoaiNguThuHai" ColumnName="TrinhDoNgoaiNguThuHai" />
+                <ScalarProperty Name="NgoaiNguThuHai" ColumnName="NgoaiNguThuHai" />
+                <ScalarProperty Name="KhenThuong" ColumnName="KhenThuong" />
+                <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
+                <ScalarProperty Name="TinhTrangSucKhoe" ColumnName="TinhTrangSucKhoe" />
+                <ScalarProperty Name="LaThuongBinh" ColumnName="LaThuongBinh" />
+                <ScalarProperty Name="SoHieuCB" ColumnName="SoHieuCB" />
+                <ScalarProperty Name="DoiTuong" ColumnName="DoiTuong" />
+                <ScalarProperty Name="HuongLuong" ColumnName="HuongLuong" />
+                <ScalarProperty Name="DonViQuanLy" ColumnName="DonViQuanLy" />
+                <ScalarProperty Name="DonViCongTac" ColumnName="DonViCongTac" />
+                <ScalarProperty Name="MaNgachCongChuc" ColumnName="MaNgachCongChuc" />
+                <ScalarProperty Name="NgayHuong" ColumnName="NgayHuong" />
+                <ScalarProperty Name="BacLuong" ColumnName="BacLuong" />
+                <ScalarProperty Name="HeSoLuong" ColumnName="HeSoLuong" />
+                <ScalarProperty Name="ChucVuHienTai" ColumnName="ChucVuHienTai" />
+                <ScalarProperty Name="ChucVuKiemNhiem" ColumnName="ChucVuKiemNhiem" />
+                <ScalarProperty Name="PhuCapChucVu" ColumnName="PhuCapChucVu" />
+                <ScalarProperty Name="CongViecChinhDangLam" ColumnName="CongViecChinhDangLam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DangViens">
+            <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.DangVien">
+              <MappingFragment StoreEntitySet="DangVien">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NgayVaoDang" ColumnName="NgayVaoDang" />
+                <ScalarProperty Name="ChiBoKetNap" ColumnName="ChiBoKetNap" />
+                <ScalarProperty Name="NguoiGioiThieu1" ColumnName="NguoiGioiThieu1" />
+                <ScalarProperty Name="ChucVuNguoiGioiThieu1" ColumnName="ChucVuNguoiGioiThieu1" />
+                <ScalarProperty Name="NgheNghiepKhiVaoDang" ColumnName="NgheNghiepKhiVaoDang" />
+                <ScalarProperty Name="NguoiGioiThieu2" ColumnName="NguoiGioiThieu2" />
+                <ScalarProperty Name="GhiChuVeNguoiGioiThieu2" ColumnName="GhiChuVeNguoiGioiThieu2" />
+                <ScalarProperty Name="NgayChinhThucVaoDang" ColumnName="NgayChinhThucVaoDang" />
+                <ScalarProperty Name="SoLyLichDangVien" ColumnName="SoLyLichDangVien" />
+                <ScalarProperty Name="SoTheDangVien" ColumnName="SoTheDangVien" />
+                <ScalarProperty Name="MaCoSoDangQLDangVien" ColumnName="MaCoSoDangQLDangVien" />
+                <ScalarProperty Name="ChucVuTrongDang" ColumnName="ChucVuTrongDang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KyLuats">
+            <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.KyLuat">
+              <MappingFragment StoreEntitySet="KyLuat">
+                <ScalarProperty Name="LyDoKyLuat" ColumnName="LyDoKyLuat" />
+                <ScalarProperty Name="NgayBiKyluat" ColumnName="NgayBiKyluat" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewALLCBs">
+            <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.ViewALLCB">
+              <MappingFragment StoreEntitySet="ViewALLCB">
+                <ScalarProperty Name="LyDoKyLuat" ColumnName="LyDoKyLuat" />
+                <ScalarProperty Name="NgayBiKyluat" ColumnName="NgayBiKyluat" />
+                <ScalarProperty Name="ChucVuTrongDang" ColumnName="ChucVuTrongDang" />
+                <ScalarProperty Name="MaCoSoDangQLDangVien" ColumnName="MaCoSoDangQLDangVien" />
+                <ScalarProperty Name="SoTheDangVien" ColumnName="SoTheDangVien" />
+                <ScalarProperty Name="SoLyLichDangVien" ColumnName="SoLyLichDangVien" />
+                <ScalarProperty Name="NgayChinhThucVaoDang" ColumnName="NgayChinhThucVaoDang" />
+                <ScalarProperty Name="GhiChuVeNguoiGioiThieu2" ColumnName="GhiChuVeNguoiGioiThieu2" />
+                <ScalarProperty Name="NguoiGioiThieu2" ColumnName="NguoiGioiThieu2" />
+                <ScalarProperty Name="NgheNghiepKhiVaoDang" ColumnName="NgheNghiepKhiVaoDang" />
+                <ScalarProperty Name="ChucVuNguoiGioiThieu1" ColumnName="ChucVuNguoiGioiThieu1" />
+                <ScalarProperty Name="NguoiGioiThieu1" ColumnName="NguoiGioiThieu1" />
+                <ScalarProperty Name="ChiBoKetNap" ColumnName="ChiBoKetNap" />
+                <ScalarProperty Name="NgayVaoDang" ColumnName="NgayVaoDang" />
+                <ScalarProperty Name="CongViecChinhDangLam" ColumnName="CongViecChinhDangLam" />
+                <ScalarProperty Name="PhuCapChucVu" ColumnName="PhuCapChucVu" />
+                <ScalarProperty Name="ChucVuKiemNhiem" ColumnName="ChucVuKiemNhiem" />
+                <ScalarProperty Name="ChucVuHienTai" ColumnName="ChucVuHienTai" />
+                <ScalarProperty Name="HeSoLuong" ColumnName="HeSoLuong" />
+                <ScalarProperty Name="BacLuong" ColumnName="BacLuong" />
+                <ScalarProperty Name="NgayHuong" ColumnName="NgayHuong" />
+                <ScalarProperty Name="MaNgachCongChuc" ColumnName="MaNgachCongChuc" />
+                <ScalarProperty Name="DonViCongTac" ColumnName="DonViCongTac" />
+                <ScalarProperty Name="DonViQuanLy" ColumnName="DonViQuanLy" />
+                <ScalarProperty Name="HuongLuong" ColumnName="HuongLuong" />
+                <ScalarProperty Name="DoiTuong" ColumnName="DoiTuong" />
+                <ScalarProperty Name="SoHieuCB" ColumnName="SoHieuCB" />
+                <ScalarProperty Name="LaThuongBinh" ColumnName="LaThuongBinh" />
+                <ScalarProperty Name="TinhTrangSucKhoe" ColumnName="TinhTrangSucKhoe" />
+                <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
+                <ScalarProperty Name="KhenThuong" ColumnName="KhenThuong" />
+                <ScalarProperty Name="NgoaiNguThuHai" ColumnName="NgoaiNguThuHai" />
+                <ScalarProperty Name="TrinhDoNgoaiNguThuHai" ColumnName="TrinhDoNgoaiNguThuHai" />
+                <ScalarProperty Name="NgoaiNguThuNhat" ColumnName="NgoaiNguThuNhat" />
+                <ScalarProperty Name="TrinhDoNgoaiNguThuNhat" ColumnName="TrinhDoNgoaiNguThuNhat" />
+                <ScalarProperty Name="TrinhDoTinHoc" ColumnName="TrinhDoTinHoc" />
+                <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+                <ScalarProperty Name="TrinhDoChuyenMonCaoNhat" ColumnName="TrinhDoChuyenMonCaoNhat" />
+                <ScalarProperty Name="TrinhDoLyLuanChinhTri" ColumnName="TrinhDoLyLuanChinhTri" />
+                <ScalarProperty Name="TrinhDoQuanLyNhaNuoc" ColumnName="TrinhDoQuanLyNhaNuoc" />
+                <ScalarProperty Name="HocVi" ColumnName="HocVi" />
+                <ScalarProperty Name="HocHam" ColumnName="HocHam" />
+                <ScalarProperty Name="TrinhDoHocVan" ColumnName="TrinhDoHocVan" />
+                <ScalarProperty Name="QuanHamCaoNhat" ColumnName="QuanHamCaoNhat" />
+                <ScalarProperty Name="NgayXuatNgu" ColumnName="NgayXuatNgu" />
+                <ScalarProperty Name="NgayNhapNgu" ColumnName="NgayNhapNgu" />
+                <ScalarProperty Name="NgayVaoCoQuanHienTai" ColumnName="NgayVaoCoQuanHienTai" />
+                <ScalarProperty Name="TenCoQuanTuyenDung" ColumnName="TenCoQuanTuyenDung" />
+                <ScalarProperty Name="NgayTuyenDung" ColumnName="NgayTuyenDung" />
+                <ScalarProperty Name="NgheNghiepKhiTuyenDung" ColumnName="NgheNghiepKhiTuyenDung" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Anh4x6" ColumnName="Anh4x6" />
+                <ScalarProperty Name="NoiCapCMND" ColumnName="NoiCapCMND" />
+                <ScalarProperty Name="NgayCapCMND" ColumnName="NgayCapCMND" />
+                <ScalarProperty Name="SoCMND" ColumnName="SoCMND" />
+                <ScalarProperty Name="TinhTrangHonNhan" ColumnName="TinhTrangHonNhan" />
+                <ScalarProperty Name="ThanhPhanGiaDinh" ColumnName="ThanhPhanGiaDinh" />
+                <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
+                <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+                <ScalarProperty Name="NoiOHienNay" ColumnName="NoiOHienNay" />
+                <ScalarProperty Name="QueQuanXa" ColumnName="QueQuanXa" />
+                <ScalarProperty Name="QueQuanHuyen" ColumnName="QueQuanHuyen" />
+                <ScalarProperty Name="QueQuanTinh" ColumnName="QueQuanTinh" />
+                <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+                <ScalarProperty Name="HoKhauThuongTru" ColumnName="HoKhauThuongTru" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="TenGoiKhac" ColumnName="TenGoiKhac" />
+                <ScalarProperty Name="HoTenKhaiSinh" ColumnName="HoTenKhaiSinh" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
