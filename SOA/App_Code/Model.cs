@@ -13,26 +13,6 @@ using System.Collections.Generic;
 public partial class CanBo
 {
     public int ID { get; set; }
-    public string HoTenKhaiSinh { get; set; }
-    public string TenGoiKhac { get; set; }
-    public string NgaySinh { get; set; }
-    public string GioiTinh { get; set; }
-    public string HoKhauThuongTru { get; set; }
-    public string NoiSinh { get; set; }
-    public string QueQuanTinh { get; set; }
-    public string QueQuanHuyen { get; set; }
-    public string QueQuanXa { get; set; }
-    public string NoiOHienNay { get; set; }
-    public string DanToc { get; set; }
-    public string TonGiao { get; set; }
-    public string ThanhPhanGiaDinh { get; set; }
-    public string TinhTrangHonNhan { get; set; }
-    public string SoCMND { get; set; }
-    public string NgayCapCMND { get; set; }
-    public string NoiCapCMND { get; set; }
-    public string Anh4x6 { get; set; }
-    public string Email { get; set; }
-    public string SDT { get; set; }
     public string NgheNghiepKhiTuyenDung { get; set; }
     public string NgayTuyenDung { get; set; }
     public string TenCoQuanTuyenDung { get; set; }
@@ -71,6 +51,12 @@ public partial class CanBo
     public string CongViecChinhDangLam { get; set; }
 }
 
+public partial class CongViecChinhDangLam
+{
+    public int ID { get; set; }
+    public string TenCongViecChinhDangLam { get; set; }
+}
+
 public partial class DangVien
 {
     public int ID { get; set; }
@@ -88,11 +74,72 @@ public partial class DangVien
     public string ChucVuTrongDang { get; set; }
 }
 
+public partial class DanToc
+{
+    public int ID { get; set; }
+    public string TenDanToc { get; set; }
+}
+
+public partial class GioiTinh
+{
+    public int ID { get; set; }
+    public string TenGioiTinh { get; set; }
+}
+
+public partial class HocHam
+{
+    public int ID { get; set; }
+    public string TenHocHam { get; set; }
+}
+
+public partial class HocVi
+{
+    public int ID { get; set; }
+    public string TenHocVi { get; set; }
+}
+
 public partial class KyLuat
 {
     public int ID { get; set; }
     public string NgayBiKyluat { get; set; }
     public string LyDoKyLuat { get; set; }
+}
+
+public partial class NgheNghiepKhiTuyenDung
+{
+    public int ID { get; set; }
+    public string TenNgheNghiepKhiTuyenDung { get; set; }
+}
+
+public partial class QuanHamCaoNhat
+{
+    public int ID { get; set; }
+    public string TenQuanHamCaoNhat { get; set; }
+}
+
+public partial class SoYeuLyLich
+{
+    public int ID { get; set; }
+    public string HoTenKhaiSinh { get; set; }
+    public string TenGoiKhac { get; set; }
+    public string NgaySinh { get; set; }
+    public string GioiTinh { get; set; }
+    public string HoKhauThuongTru { get; set; }
+    public string NoiSinh { get; set; }
+    public string QueQuanTinh { get; set; }
+    public string QueQuanHuyen { get; set; }
+    public string QueQuanXa { get; set; }
+    public string NoiOHienNay { get; set; }
+    public string DanToc { get; set; }
+    public string TonGiao { get; set; }
+    public string ThanhPhanGiaDinh { get; set; }
+    public string TinhTrangHonNhan { get; set; }
+    public string SoCMND { get; set; }
+    public string NgayCapCMND { get; set; }
+    public string NoiCapCMND { get; set; }
+    public string Image { get; set; }
+    public string Email { get; set; }
+    public string SDT { get; set; }
 }
 
 public partial class sysdiagram
@@ -102,6 +149,48 @@ public partial class sysdiagram
     public int diagram_id { get; set; }
     public Nullable<int> version { get; set; }
     public byte[] definition { get; set; }
+}
+
+public partial class ThanhPhanGiaDinh
+{
+    public int ID { get; set; }
+    public string TenTPGiaDinh { get; set; }
+}
+
+public partial class ThuongBinh
+{
+    public int ID { get; set; }
+    public string TenLoaiThuongBinh { get; set; }
+}
+
+public partial class TinhTrangSucKhoe
+{
+    public int ID { get; set; }
+    public string TenTinhTrangSucKhoe { get; set; }
+}
+
+public partial class TonGiao
+{
+    public int ID { get; set; }
+    public string TenTonGiao { get; set; }
+}
+
+public partial class TrinhDoHocVan
+{
+    public int ID { get; set; }
+    public string TenTrinhDoHocVan { get; set; }
+}
+
+public partial class TrinhDoLyLuanChinhTri
+{
+    public int ID { get; set; }
+    public string TenTrinhDoLyLuanChinhTri { get; set; }
+}
+
+public partial class TrinhDoQuanLyNhaNuoc
+{
+    public int ID { get; set; }
+    public string TenTrinhDoQuanLyNhaNuoc { get; set; }
 }
 
 public partial class ViewALLCB
@@ -124,7 +213,7 @@ public partial class ViewALLCB
     public string SoCMND { get; set; }
     public string NgayCapCMND { get; set; }
     public string NoiCapCMND { get; set; }
-    public string Anh4x6 { get; set; }
+    public string Image { get; set; }
     public string Email { get; set; }
     public string SDT { get; set; }
     public string NgheNghiepKhiTuyenDung { get; set; }

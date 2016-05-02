@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SOA;
@@ -13,9 +14,9 @@ public partial class ThemSuaCanBo : Page
         }
     }
 
- 
+
     private void PopulateRequiredData()
-    { 
+    {
 
         ServiceCanBo es = new ServiceCanBo();
         try
@@ -23,43 +24,54 @@ public partial class ThemSuaCanBo : Page
             var id = Common.TryParseObjectToInt(Request.QueryString["ID"] + "");
             var item = es.GetThongTin1CanBo("TheBinh", "12345678", id);
 
+            BindCombobox(es, item);
+
             if (id != 0)
             {
                 Button1.Text = "Lưu Thông Tin Cán Bộ";
                 Button2.Visible = false;
 
+
+                txtNgayVaoDang.Text = item.NgayVaoDang;
+                txtChiBoKetNap.Text = item.ChiBoKetNap;
+                txtNguoiGioiThieu1.Text = item.NguoiGioiThieu1;
+                txtChucVuNguoiGioiThieu1.Text = item.ChucVuNguoiGioiThieu1;
+                txtNgheNghiepKhiVaoDang.Text = item.NgheNghiepKhiVaoDang;
+                txtNguoiGioiThieu2.Text = item.NguoiGioiThieu2;
+                txtGhiChuVeNguoiGioiThieu2.Text = item.GhiChuVeNguoiGioiThieu2;
+                txtNgayChinhThucVaoDang.Text = item.NgayChinhThucVaoDang;
+                txtSoLyLichDangVien.Text = item.SoLyLichDangVien;
+                txtSoTheDangVien.Text = item.SoTheDangVien;
+                txtMaCoSoDangQLDangVien.Text = item.MaCoSoDangQLDangVien;
+                txtChucVuTrongDang.Text = item.ChucVuTrongDang;
+
+                txtNgayBiKyluat.Text = item.NgayBiKyluat;
+                txtLyDoKyLuat.Text = item.LyDoKyLuat;
+
+
+                imgAnhDaiDien.ImageUrl = item.Image;
                 txtHoTenKhaiSinh.Text = item.HoTenKhaiSinh;
                 txtTenGoiKhac.Text = item.TenGoiKhac;
                 txtNgaySinh.Text = item.NgaySinh;
-                txtGioiTinh.Text = item.GioiTinh;
                 txtHoKhauThuongTru.Text = item.HoKhauThuongTru;
                 txtNoiSinh.Text = item.NoiSinh;
                 txtQueQuanTinh.Text = item.QueQuanTinh;
                 txtQueQuanHuyen.Text = item.QueQuanHuyen;
                 txtQueQuanXa.Text = item.QueQuanXa;
                 txtNoiOHienNay.Text = item.NoiOHienNay;
-                txtDanToc.Text = item.DanToc;
-                txtTonGiao.Text = item.TonGiao;
-                txtThanhPhanGiaDinh.Text = item.ThanhPhanGiaDinh;
+
                 txtTinhTrangHonNhan.Text = item.TinhTrangHonNhan;
                 txtSoCMND.Text = item.SoCMND;
                 txtNgayCapCMND.Text = item.NgayCapCMND;
                 txtNoiCapCMND.Text = item.NoiCapCMND;
-                txtAnh4x6.Text = item.Anh4x6;
                 txtEmail.Text = item.Email;
                 txtSDT.Text = item.SDT;
-                txtNgheNghiepKhiTuyenDung.Text = item.NgheNghiepKhiTuyenDung;
                 txtNgayTuyenDung.Text = item.NgayTuyenDung;
                 txtTenCoQuanTuyenDung.Text = item.TenCoQuanTuyenDung;
                 txtNgayVaoCoQuanHienTai.Text = item.NgayVaoCoQuanHienTai;
                 txtNgayNhapNgu.Text = item.NgayNhapNgu;
                 txtNgayXuatNgu.Text = item.NgayXuatNgu;
-                txtQuanHamCaoNhat.Text = item.QuanHamCaoNhat;
-                txtTrinhDoHocVan.Text = item.TrinhDoHocVan;
-                txtHocHam.Text = item.HocHam;
-                txtHocVi.Text = item.HocVi;
-                txtTrinhDoQuanLyNhaNuoc.Text = item.TrinhDoQuanLyNhaNuoc;
-                txtTrinhDoLyLuanChinhTri.Text = item.TrinhDoLyLuanChinhTri;
+
                 txtTrinhDoChuyenMonCaoNhat.Text = item.TrinhDoChuyenMonCaoNhat;
                 txtChuyenNganh.Text = item.ChuyenNganh;
                 txtTrinhDoTinHoc.Text = item.TrinhDoTinHoc;
@@ -69,8 +81,8 @@ public partial class ThemSuaCanBo : Page
                 txtNgoaiNguThuHai.Text = item.NgoaiNguThuHai;
                 txtKhenThuong.Text = item.KhenThuong;
                 txtKyLuat.Text = item.KyLuat;
-                txtTinhTrangSucKhoe.Text = item.TinhTrangSucKhoe;
-                txtLaThuongBinh.Text = item.LaThuongBinh;
+
+
                 txtSoHieuCB.Text = item.SoHieuCB;
                 txtDoiTuong.Text = item.DoiTuong;
                 txtHuongLuong.Text = item.HuongLuong;
@@ -83,10 +95,10 @@ public partial class ThemSuaCanBo : Page
                 txtChucVuHienTai.Text = item.ChucVuHienTai;
                 txtChucVuKiemNhiem.Text = item.ChucVuKiemNhiem;
                 txtPhuCapChucVu.Text = item.PhuCapChucVu + "";
-                txtCongViecChinhDangLam.Text = item.CongViecChinhDangLam;
             }
             else
             {
+
                 Button1.Text = "Thêm mới Cán Bộ";
                 Button2.Visible = true;
             }
@@ -102,10 +114,125 @@ public partial class ThemSuaCanBo : Page
         }
     }
 
+    public void BindCombobox(ServiceCanBo es, ViewALLCB item)
+    {
+        if (item == null)
+        {
+            item = new ViewALLCB();
+        }
+        txtTinhTrangSucKhoe.DataSource = es.TinhTrangSucKhoe("TheBinh", "12345678");
+        txtTinhTrangSucKhoe.DataBind();
+        txtTinhTrangSucKhoe.DataTextField = "TenTinhTrangSucKhoe";
+        txtTinhTrangSucKhoe.DataValueField = "TenTinhTrangSucKhoe";
+        txtTinhTrangSucKhoe.DataBind();
+        txtTinhTrangSucKhoe.Text = item.TinhTrangSucKhoe;
+
+
+        txtLaThuongBinh.DataSource = es.ThuongBinh("TheBinh", "12345678");
+        txtLaThuongBinh.DataBind();
+        txtLaThuongBinh.DataTextField = "TenLoaiThuongBinh";
+        txtLaThuongBinh.DataValueField = "TenLoaiThuongBinh";
+        txtLaThuongBinh.DataBind();
+        txtLaThuongBinh.Text = item.LaThuongBinh;
+
+        txtQuanHamCaoNhat.DataSource = es.QuanHamCaoNhat("TheBinh", "12345678");
+        txtQuanHamCaoNhat.DataBind();
+        txtQuanHamCaoNhat.DataTextField = "TenQuanHamCaoNhat";
+        txtQuanHamCaoNhat.DataValueField = "TenQuanHamCaoNhat";
+        txtQuanHamCaoNhat.DataBind();
+        txtQuanHamCaoNhat.Text = item.QuanHamCaoNhat;
+
+        txtTrinhDoHocVan.DataSource = es.TrinhDoHocVan("TheBinh", "12345678");
+        txtTrinhDoHocVan.DataBind();
+        txtTrinhDoHocVan.DataTextField = "TenTrinhDoHocVan";
+        txtTrinhDoHocVan.DataValueField = "TenTrinhDoHocVan";
+        txtTrinhDoHocVan.DataBind();
+        txtTrinhDoHocVan.Text = item.TrinhDoHocVan;
+
+
+        txtHocHam.DataSource = es.HocHam("TheBinh", "12345678");
+        txtHocHam.DataBind();
+        txtHocHam.DataTextField = "TenHocHam";
+        txtHocHam.DataValueField = "TenHocHam";
+        txtHocHam.DataBind();
+        txtHocHam.Text = item.HocHam;
+
+
+        txtHocVi.DataSource = es.HocVi("TheBinh", "12345678");
+        txtHocVi.DataBind();
+        txtHocVi.DataTextField = "TenHocVi";
+        txtHocVi.DataValueField = "TenHocVi";
+        txtHocVi.DataBind();
+        txtHocVi.Text = item.HocVi;
+
+        txtTrinhDoQuanLyNhaNuoc.DataSource = es.TrinhDoQuanLyNhaNuoc("TheBinh", "12345678");
+        txtTrinhDoQuanLyNhaNuoc.DataBind();
+        txtTrinhDoQuanLyNhaNuoc.DataTextField = "TenTrinhDoQuanLyNhaNuoc";
+        txtTrinhDoQuanLyNhaNuoc.DataValueField = "TenTrinhDoQuanLyNhaNuoc";
+        txtTrinhDoQuanLyNhaNuoc.DataBind();
+        txtTrinhDoQuanLyNhaNuoc.Text = item.TrinhDoQuanLyNhaNuoc;
+
+        txtTrinhDoLyLuanChinhTri.DataSource = es.TrinhDoLyLuanChinhTri("TheBinh", "12345678");
+        txtTrinhDoLyLuanChinhTri.DataBind();
+        txtTrinhDoLyLuanChinhTri.DataTextField = "TenTrinhDoLyLuanChinhTri";
+        txtTrinhDoLyLuanChinhTri.DataValueField = "TenTrinhDoLyLuanChinhTri";
+        txtTrinhDoLyLuanChinhTri.DataBind();
+        txtTrinhDoLyLuanChinhTri.Text = item.TrinhDoLyLuanChinhTri;
+
+        txtDanToc.DataSource = es.DanToc("TheBinh", "12345678");
+        txtDanToc.DataBind();
+        txtDanToc.DataTextField = "TenDanToc";
+        txtDanToc.DataValueField = "TenDanToc";
+        txtDanToc.DataBind();
+        txtDanToc.Text = item.DanToc;
+
+
+        txtTonGiao.DataSource = es.TonGiao("TheBinh", "12345678");
+        txtTonGiao.DataBind();
+        txtTonGiao.DataTextField = "TenTonGiao";
+        txtTonGiao.DataValueField = "TenTonGiao";
+        txtTonGiao.DataBind();
+        txtTonGiao.Text = item.TonGiao;
+
+
+        txtGioiTinh.DataSource = es.GioiTinh("TheBinh", "12345678");
+        txtGioiTinh.DataBind();
+        txtGioiTinh.DataTextField = "TenGioiTinh";
+        txtGioiTinh.DataValueField = "TenGioiTinh";
+        txtGioiTinh.DataBind();
+        txtGioiTinh.Text = item.GioiTinh;
+
+
+        txtThanhPhanGiaDinh.DataSource = es.ThanhPhanGiaDinh("TheBinh", "12345678");
+        txtThanhPhanGiaDinh.DataBind();
+        txtThanhPhanGiaDinh.DataTextField = "TenTPGiaDinh";
+        txtThanhPhanGiaDinh.DataValueField = "TenTPGiaDinh";
+        txtThanhPhanGiaDinh.DataBind();
+        txtThanhPhanGiaDinh.Text = item.ThanhPhanGiaDinh;
+
+        txtNgheNghiepKhiTuyenDung.DataSource = es.NgheNghiepKhiTuyenDung("TheBinh", "12345678");
+        txtNgheNghiepKhiTuyenDung.DataBind();
+        txtNgheNghiepKhiTuyenDung.DataTextField = "TenNgheNghiepKhiTuyenDung";
+        txtNgheNghiepKhiTuyenDung.DataValueField = "TenNgheNghiepKhiTuyenDung";
+        txtNgheNghiepKhiTuyenDung.DataBind();
+        txtNgheNghiepKhiTuyenDung.Text = item.NgheNghiepKhiTuyenDung;
+
+
+        txtCongViecChinhDangLam.DataSource = es.CongViecChinhDangLam("TheBinh", "12345678");
+        txtCongViecChinhDangLam.DataBind();
+        txtCongViecChinhDangLam.DataTextField = "TenCongViecChinhDangLam";
+        txtCongViecChinhDangLam.DataValueField = "TenCongViecChinhDangLam";
+        txtCongViecChinhDangLam.DataBind();
+        txtCongViecChinhDangLam.Text = item.CongViecChinhDangLam;
+
+
+    }
+
+
     protected void EditRecord(object sender, EventArgs e)
     {
-        CanBo item = new CanBo();
-
+        ViewModel item = new ViewModel();
+        item.Image = imgAnhDaiDien.ImageUrl;
         item.HoTenKhaiSinh = txtHoTenKhaiSinh.Text;
         item.TenGoiKhac = txtTenGoiKhac.Text;
         item.NgaySinh = txtNgaySinh.Text;
@@ -123,7 +250,6 @@ public partial class ThemSuaCanBo : Page
         item.SoCMND = txtSoCMND.Text;
         item.NgayCapCMND = txtNgayCapCMND.Text;
         item.NoiCapCMND = txtNoiCapCMND.Text;
-        item.Anh4x6 = txtAnh4x6.Text;
         item.Email = txtEmail.Text;
         item.SDT = txtSDT.Text;
         item.NgheNghiepKhiTuyenDung = txtNgheNghiepKhiTuyenDung.Text;
@@ -267,7 +393,6 @@ public partial class ThemSuaCanBo : Page
 
         txtNgayCapCMND.Text = GetRandomDate(new DateTime(1995, 1, 1), new DateTime(2010, 1, 1));
         txtNoiCapCMND.Text = "CA " + tinh;
-        txtAnh4x6.Text = "";
         txtEmail.Text = "";
         txtSDT.Text = GenerateNumber(12);
 
@@ -304,11 +429,20 @@ public partial class ThemSuaCanBo : Page
         txtPhuCapChucVu.Text = "1." + GenerateNumber(3);
         txtChucVuHienTai.Text = "Chuyên viên";
         txtCongViecChinhDangLam.Text = Nghes[new Random().Next(0, Nghes.Length)];
-
-
-
     }
 
-
+    protected void UploadButton_Click(object sender, EventArgs e)
+    {
+        if (FileUploadControl.HasFile)
+        {
+            try
+            {
+                imgAnhDaiDien.ImageUrl = "data:image/png;base64," + Common.ImageToBase64string(FileUploadControl.FileContent);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+    }
 
 }

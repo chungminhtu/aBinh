@@ -67,7 +67,7 @@ public class ServiceCanBo : WebService
     }
 
     [WebMethod]
-    public bool ThemCanBo(string username, string password, CanBo kh)
+    public bool ThemCanBo(string username, string password, ViewModel kh)
     {
         try
         {
@@ -75,7 +75,76 @@ public class ServiceCanBo : WebService
             bool bAuthen = a.fAuthen(username, password);
             if (bAuthen)
             {
-                db.CanBoes.Add(kh);
+
+                SoYeuLyLich ll = new SoYeuLyLich();
+
+                ll.ID = kh.ID;
+                ll.HoTenKhaiSinh = kh.HoTenKhaiSinh;
+                ll.TenGoiKhac = kh.TenGoiKhac;
+                ll.NgaySinh = kh.NgaySinh;
+                ll.GioiTinh = kh.GioiTinh;
+                ll.HoKhauThuongTru = kh.HoKhauThuongTru;
+                ll.NoiSinh = kh.NoiSinh;
+                ll.QueQuanTinh = kh.QueQuanTinh;
+                ll.QueQuanHuyen = kh.QueQuanHuyen;
+                ll.QueQuanXa = kh.QueQuanXa;
+                ll.NoiOHienNay = kh.NoiOHienNay;
+                ll.DanToc = kh.DanToc;
+                ll.TonGiao = kh.TonGiao;
+                ll.ThanhPhanGiaDinh = kh.ThanhPhanGiaDinh;
+                ll.TinhTrangHonNhan = kh.TinhTrangHonNhan;
+                ll.SoCMND = kh.SoCMND;
+                ll.NgayCapCMND = kh.NgayCapCMND;
+                ll.NoiCapCMND = kh.NoiCapCMND;
+                ll.Image = kh.Image;
+                ll.Email = kh.Email;
+                ll.SDT = kh.SDT;
+
+                db.SoYeuLyLiches.Add(ll);
+                db.SaveChanges();
+
+                CanBo cb = new CanBo();
+                 
+                cb.ID = db.SoYeuLyLiches.Max(x => x.ID);
+                cb.NgheNghiepKhiTuyenDung = kh.NgheNghiepKhiTuyenDung;
+                cb.NgayTuyenDung = kh.NgayTuyenDung;
+                cb.TenCoQuanTuyenDung = kh.TenCoQuanTuyenDung;
+                cb.NgayVaoCoQuanHienTai = kh.NgayVaoCoQuanHienTai;
+                cb.NgayNhapNgu = kh.NgayNhapNgu;
+                cb.NgayXuatNgu = kh.NgayXuatNgu;
+                cb.QuanHamCaoNhat = kh.QuanHamCaoNhat;
+                cb.TrinhDoHocVan = kh.TrinhDoHocVan;
+                cb.HocHam = kh.HocHam;
+                cb.HocVi = kh.HocVi;
+                cb.TrinhDoQuanLyNhaNuoc = kh.TrinhDoQuanLyNhaNuoc;
+                cb.TrinhDoLyLuanChinhTri = kh.TrinhDoLyLuanChinhTri;
+                cb.TrinhDoChuyenMonCaoNhat = kh.TrinhDoChuyenMonCaoNhat;
+                cb.ChuyenNganh = kh.ChuyenNganh;
+                cb.TrinhDoTinHoc = kh.TrinhDoTinHoc;
+                cb.TrinhDoNgoaiNguThuNhat = kh.TrinhDoNgoaiNguThuNhat;
+                cb.NgoaiNguThuNhat = kh.NgoaiNguThuNhat;
+                cb.TrinhDoNgoaiNguThuHai = kh.TrinhDoNgoaiNguThuHai;
+                cb.NgoaiNguThuHai = kh.NgoaiNguThuHai;
+                cb.KhenThuong = kh.KhenThuong;
+                cb.KyLuat = kh.KyLuat;
+                cb.TinhTrangSucKhoe = kh.TinhTrangSucKhoe;
+                cb.LaThuongBinh = kh.LaThuongBinh;
+                cb.SoHieuCB = kh.SoHieuCB;
+                cb.DoiTuong = kh.DoiTuong;
+                cb.HuongLuong = kh.HuongLuong;
+                cb.DonViQuanLy = kh.DonViQuanLy;
+                cb.DonViCongTac = kh.DonViCongTac;
+                cb.MaNgachCongChuc = kh.MaNgachCongChuc;
+                cb.NgayHuong = kh.NgayHuong;
+                cb.BacLuong = kh.BacLuong;
+                cb.HeSoLuong = kh.HeSoLuong;
+                cb.ChucVuHienTai = kh.ChucVuHienTai;
+                cb.ChucVuKiemNhiem = kh.ChucVuKiemNhiem;
+                cb.PhuCapChucVu = kh.PhuCapChucVu;
+                cb.CongViecChinhDangLam = kh.CongViecChinhDangLam;
+
+                db.CanBoes.Add(cb);
+
                 db.SaveChanges();
                 return true;
             }
@@ -89,7 +158,7 @@ public class ServiceCanBo : WebService
     }
 
     [WebMethod]
-    public bool SuaCanBo(string username, string password, CanBo kh)
+    public bool SuaCanBo(string username, string password, ViewModel kh)
     {
         try
         {
@@ -97,31 +166,38 @@ public class ServiceCanBo : WebService
             bool bAuthen = a.fAuthen(username, password);
             if (bAuthen)
             {
+                SoYeuLyLich ll = (from c in db.SoYeuLyLiches
+                                  where c.ID == kh.ID
+                                  select c).FirstOrDefault();
+
+                ll.ID = kh.ID;
+                ll.HoTenKhaiSinh = kh.HoTenKhaiSinh;
+                ll.TenGoiKhac = kh.TenGoiKhac;
+                ll.NgaySinh = kh.NgaySinh;
+                ll.GioiTinh = kh.GioiTinh;
+                ll.HoKhauThuongTru = kh.HoKhauThuongTru;
+                ll.NoiSinh = kh.NoiSinh;
+                ll.QueQuanTinh = kh.QueQuanTinh;
+                ll.QueQuanHuyen = kh.QueQuanHuyen;
+                ll.QueQuanXa = kh.QueQuanXa;
+                ll.NoiOHienNay = kh.NoiOHienNay;
+                ll.DanToc = kh.DanToc;
+                ll.TonGiao = kh.TonGiao;
+                ll.ThanhPhanGiaDinh = kh.ThanhPhanGiaDinh;
+                ll.TinhTrangHonNhan = kh.TinhTrangHonNhan;
+                ll.SoCMND = kh.SoCMND;
+                ll.NgayCapCMND = kh.NgayCapCMND;
+                ll.NoiCapCMND = kh.NoiCapCMND;
+                ll.Image = kh.Image;
+                ll.Email = kh.Email;
+                ll.SDT = kh.SDT;
+
+
                 CanBo cb = (from c in db.CanBoes
                             where c.ID == kh.ID
                             select c).FirstOrDefault();
 
                 cb.ID = kh.ID;
-                cb.HoTenKhaiSinh = kh.HoTenKhaiSinh;
-                cb.TenGoiKhac = kh.TenGoiKhac;
-                cb.NgaySinh = kh.NgaySinh;
-                cb.GioiTinh = kh.GioiTinh;
-                cb.HoKhauThuongTru = kh.HoKhauThuongTru;
-                cb.NoiSinh = kh.NoiSinh;
-                cb.QueQuanTinh = kh.QueQuanTinh;
-                cb.QueQuanHuyen = kh.QueQuanHuyen;
-                cb.QueQuanXa = kh.QueQuanXa;
-                cb.NoiOHienNay = kh.NoiOHienNay;
-                cb.DanToc = kh.DanToc;
-                cb.TonGiao = kh.TonGiao;
-                cb.ThanhPhanGiaDinh = kh.ThanhPhanGiaDinh;
-                cb.TinhTrangHonNhan = kh.TinhTrangHonNhan;
-                cb.SoCMND = kh.SoCMND;
-                cb.NgayCapCMND = kh.NgayCapCMND;
-                cb.NoiCapCMND = kh.NoiCapCMND;
-                cb.Anh4x6 = kh.Anh4x6;
-                cb.Email = kh.Email;
-                cb.SDT = kh.SDT;
                 cb.NgheNghiepKhiTuyenDung = kh.NgheNghiepKhiTuyenDung;
                 cb.NgayTuyenDung = kh.NgayTuyenDung;
                 cb.TenCoQuanTuyenDung = kh.TenCoQuanTuyenDung;
@@ -181,6 +257,9 @@ public class ServiceCanBo : WebService
             if (bAuthen)
             {
                 db.CanBoes.Remove(db.CanBoes.FirstOrDefault(a => a.ID == MaCB));
+                db.SoYeuLyLiches.Remove(db.SoYeuLyLiches.FirstOrDefault(a => a.ID == MaCB));
+                db.DangViens.Remove(db.DangViens.FirstOrDefault(a => a.ID == MaCB));
+                db.KyLuats.Remove(db.KyLuats.FirstOrDefault(a => a.ID == MaCB));
                 db.SaveChanges();
                 return true;
             }
@@ -205,8 +284,8 @@ public class ServiceCanBo : WebService
             if (bAuthen)
             {
                 ViewALLCB CanBo = (from c in db.ViewALLCBs
-                               where c.ID == MaCB
-                               select c).FirstOrDefault();
+                                   where c.ID == MaCB
+                                   select c).FirstOrDefault();
                 return CanBo;
             }
             else
@@ -221,5 +300,294 @@ public class ServiceCanBo : WebService
     //-------------------------------------------------------------------------------------------
     #endregion
 
+
+    #region COMBOBOX
+    //--------------- VÙNG DÀNH CHO QUẢN TRỊ COMBOBOX --------------------------
+
+
+    [WebMethod]
+    public List<NgheNghiepKhiTuyenDung> NgheNghiepKhiTuyenDung(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.NgheNghiepKhiTuyenDungs.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<QuanHamCaoNhat> QuanHamCaoNhat(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.QuanHamCaoNhats.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<ThanhPhanGiaDinh> ThanhPhanGiaDinh(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.ThanhPhanGiaDinhs.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<ThuongBinh> ThuongBinh(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.ThuongBinhs.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<TinhTrangSucKhoe> TinhTrangSucKhoe(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.TinhTrangSucKhoes.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<TonGiao> TonGiao(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.TonGiaos.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<TrinhDoHocVan> TrinhDoHocVan(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.TrinhDoHocVans.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<TrinhDoLyLuanChinhTri> TrinhDoLyLuanChinhTri(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.TrinhDoLyLuanChinhTris.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<TrinhDoQuanLyNhaNuoc> TrinhDoQuanLyNhaNuoc(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.TrinhDoQuanLyNhaNuocs.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<DanToc> DanToc(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.DanTocs.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<GioiTinh> GioiTinh(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.GioiTinhs.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<HocHam> HocHam(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.HocHams.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<HocVi> HocVi(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.HocVis.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public List<CongViecChinhDangLam> CongViecChinhDangLam(string username, string password)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.CongViecChinhDangLams.ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    
+
+  //------------------------------------------------------------------------------
+    #endregion
 }
 

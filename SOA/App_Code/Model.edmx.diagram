@@ -5,11 +5,26 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e2cdcf10564142ef9006544bbfcfa3d7" Name="Diagram1" ZoomLevel="75">
-        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.CanBo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.DangVien" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.sysdiagram" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.KyLuat" Width="1.5" PointX="3.125" PointY="4.625" />
-        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.ViewALLCB" Width="1.5" PointX="6.875" PointY="0.75" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.CanBo" Width="1.5" PointX="1.6173103738656782" PointY="21.042745227479724" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.CongViecChinhDangLam" Width="1.5" PointX="7.946346271758129" PointY="9.9199995146691791" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.DangVien" Width="1.5" PointX="11.991167586292685" PointY="20.406881058778094" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.DanToc" Width="1.5" PointX="4.0141073949700719" PointY="9.3177516354796257" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.GioiTinh" Width="1.5" PointX="9.5353764898774109" PointY="24.802108642087369" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.HocHam" Width="1.5" PointX="0.040539488215250656" PointY="31.88131320471005" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.HocVi" Width="1.5" PointX="2.5098810598765877" PointY="29.55223287528019" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.KyLuat" Width="1.5" PointX="0.4477959631233458" PointY="27.004372966943482" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.NgheNghiepKhiTuyenDung" Width="1.5" PointX="10.404891007768406" PointY="12.775772190082712" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.QuanHamCaoNhat" Width="1.5" PointX="1.6292556140708063" PointY="5.3463519985537751" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.SoYeuLyLich" Width="1.5" PointX="1.7295649674393072" PointY="6.2199459104891615" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.sysdiagram" Width="1.5" PointX="10.759399668667186" PointY="6.7440188856534746" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.ThanhPhanGiaDinh" Width="1.5" PointX="6.4890095156100625" PointY="13.762379757018005" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.ThuongBinh" Width="1.5" PointX="7.2926841393544732" PointY="11.622290586876819" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.TinhTrangSucKhoe" Width="1.5" PointX="6.73480134957228" PointY="27.107337576852803" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.TonGiao" Width="1.5" PointX="4.7133097372545443" PointY="30.775857075478815" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.TrinhDoHocVan" Width="1.5" PointX="1.0278475848156248" PointY="25.84296157669414" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.TrinhDoLyLuanChinhTri" Width="1.5" PointX="7.9572181030908684" PointY="22.363617221994147" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.TrinhDoQuanLyNhaNuoc" Width="1.5" PointX="9.35185760322579" PointY="26.105672013995086" />
+        <EntityTypeShape EntityType="CoSoDuLieuTichHopModel.ViewALLCB" Width="1.5" PointX="1.521717992388512" PointY="8.4947987238386649" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

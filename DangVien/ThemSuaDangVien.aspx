@@ -13,182 +13,115 @@
         <div class="message">
             <asp:Label ID="lblMessage" runat="Server" ForeColor="red" EnableViewState="False"></asp:Label>
         </div>
-        <asp:Panel CssClass="cssPanel" ID="PanelSoYeuLyLich" GroupingText="Sơ yếu lý lịch" runat="server">
+        <asp:Panel ID="PanelSoYeuLyLich" runat="server" CssClass="cssPanel" GroupingText="Sơ yếu lý lịch">
             <table style="border: none;">
                 <tr>
                     <td>Họ tên khai sinh: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtHoTenKhaiSinh" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td>
+                        <asp:TextBox ID="txtHoTenKhaiSinh" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Tên gọi khác: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtTenGoiKhac" runat="Server" Width="200px"></asp:TextBox></td>
-
-                    <td>Ngày sinh: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtNgaySinh" runat="Server" Width="200px"></asp:TextBox></td>
+                    <td>
+                        <asp:TextBox ID="txtTenGoiKhac" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
+                    <td rowspan="10" style="width: 185px">Ảnh 4x6:
+                        <asp:Image ID="imgAnhDaiDien" runat="server" Width="350px" />
+                    </td>
                 </tr>
                 <tr>
+                    <td>Ngày sinh: </td>
+                    <td>
+                        <asp:TextBox ID="txtNgaySinh" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Giới tính: </td>
-                    <td class="style3">
-                        <asp:DropDownList ID="txtGioiTinh" runat="Server" Width="200px" Height="25px">
-                            <asp:ListItem Text="" Value=""></asp:ListItem>
-                            <asp:ListItem>Nam</asp:ListItem>
-                            <asp:ListItem>Nữ</asp:ListItem>
+                    <td>
+                        <asp:DropDownList ID="txtGioiTinh" runat="Server" Height="25px" Width="200px">
                         </asp:DropDownList>
                     </td>
-                    <td>Hộ khẩu thường trú: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtHoKhauThuongTru" runat="Server" Width="200px"></asp:TextBox></td>
-
-                    <td>Nơi sinh: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtNoiSinh" runat="Server" Width="200px"></asp:TextBox></td>
                 </tr>
                 <tr>
+                    <td>Hộ khẩu thường trú: </td>
+                    <td colspan="3">
+                        <asp:TextBox ID="txtHoKhauThuongTru" runat="Server" Width="95%"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nơi sinh: </td>
+                    <td>
+                        <asp:TextBox ID="txtNoiSinh" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Quê quán Tỉnh: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtQueQuanTinh" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td>
+                        <asp:TextBox ID="txtQueQuanTinh" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
                     <td>Quê quán Huyện: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtQueQuanHuyen" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td>
+                        <asp:TextBox ID="txtQueQuanHuyen" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Quê quán Xã: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtQueQuanXa" runat="Server" Width="200px"></asp:TextBox></td>
+                    <td>
+                        <asp:TextBox ID="txtQueQuanXa" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
                     <td>Nơi ở hiện nay: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtNoiOHienNay" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td>
+                        <asp:TextBox ID="txtNoiOHienNay" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Dân tộc: </td>
-                    <td class="style3">
+                    <td>
                         <asp:DropDownList ID="txtDanToc" runat="Server" Width="200px">
-                            <asp:ListItem Text="" Value=""></asp:ListItem>
-                            <asp:ListItem>Kinh</asp:ListItem>
-                            <asp:ListItem>Chứt</asp:ListItem>
-                            <asp:ListItem>Mường</asp:ListItem>
-                            <asp:ListItem>Thổ</asp:ListItem>
-                            <asp:ListItem>Bố Y</asp:ListItem>
-                            <asp:ListItem>Giáy</asp:ListItem>
-                            <asp:ListItem>Lào</asp:ListItem>
-                            <asp:ListItem>Lự</asp:ListItem>
-                            <asp:ListItem>Nùng</asp:ListItem>
-                            <asp:ListItem>Sán Chay</asp:ListItem>
-                            <asp:ListItem>Tày</asp:ListItem>
-                            <asp:ListItem>Thái</asp:ListItem>
-                            <asp:ListItem>Cờ Lao</asp:ListItem>
-                            <asp:ListItem>La Chí</asp:ListItem>
-                            <asp:ListItem>La Ha</asp:ListItem>
-                            <asp:ListItem>Pu Péo</asp:ListItem>
-                            <asp:ListItem>Ba Na</asp:ListItem>
-                            <asp:ListItem>Brâu</asp:ListItem>
-                            <asp:ListItem>Bru - Vân Kiều</asp:ListItem>
-                            <asp:ListItem>Chơ Ro</asp:ListItem>
-                            <asp:ListItem>Co</asp:ListItem>
-                            <asp:ListItem>Cơ Ho</asp:ListItem>
-                            <asp:ListItem>Cơ Tu</asp:ListItem>
-                            <asp:ListItem>Giẻ Triêng</asp:ListItem>
-                            <asp:ListItem>Hrê</asp:ListItem>
-                            <asp:ListItem>Kháng</asp:ListItem>
-                            <asp:ListItem>Khơ Me</asp:ListItem>
-                            <asp:ListItem>Khơ Mú</asp:ListItem>
-                            <asp:ListItem>Mạ</asp:ListItem>
-                            <asp:ListItem>Mảng</asp:ListItem>
-                            <asp:ListItem>M’Nông</asp:ListItem>
-                            <asp:ListItem>Ơ Đu</asp:ListItem>
-                            <asp:ListItem>Rơ Măm</asp:ListItem>
-                            <asp:ListItem>Tà Ôi</asp:ListItem>
-                            <asp:ListItem>Xinh Mun</asp:ListItem>
-                            <asp:ListItem>Xơ Đăng</asp:ListItem>
-                            <asp:ListItem>X’Tiêng</asp:ListItem>
-                            <asp:ListItem>Dao</asp:ListItem>
-                            <asp:ListItem>H’Mông</asp:ListItem>
-                            <asp:ListItem>Pà Thẻn</asp:ListItem>
-                            <asp:ListItem>Chăm</asp:ListItem>
-                            <asp:ListItem>Chu Ru</asp:ListItem>
-                            <asp:ListItem>Ê Đê</asp:ListItem>
-                            <asp:ListItem>Gia Rai</asp:ListItem>
-                            <asp:ListItem>Ra Glai</asp:ListItem>
-                            <asp:ListItem>Hoa</asp:ListItem>
-                            <asp:ListItem>Ngái</asp:ListItem>
-                            <asp:ListItem>Sán Dìu</asp:ListItem>
-                            <asp:ListItem>Cống</asp:ListItem>
-                            <asp:ListItem>Hà Nhì</asp:ListItem>
-                            <asp:ListItem>La Hủ</asp:ListItem>
-                            <asp:ListItem>Lô Lô</asp:ListItem>
-                            <asp:ListItem>Phù Lá</asp:ListItem>
-                            <asp:ListItem>Si La</asp:ListItem>
-
-                        </asp:DropDownList></td>
-                    <td>Tôn giáo: </td>
-                    <td class="style3">
-                        <asp:DropDownList ID="txtTonGiao" runat="Server" Width="200px">
-                            <asp:ListItem Text="" Value=""></asp:ListItem>
-                            <asp:ListItem>Phật giáo</asp:ListItem>
-                            <asp:ListItem>Công giáo</asp:ListItem>
-                            <asp:ListItem>Cao đài</asp:ListItem>
-                            <asp:ListItem>Hòa hảo</asp:ListItem>
-                            <asp:ListItem>Tin lành</asp:ListItem>
-                            <asp:ListItem>Hồi giáo</asp:ListItem>
-                            <asp:ListItem>T.Giáo khác</asp:ListItem>
-                            <asp:ListItem>Không có</asp:ListItem>
-                        </asp:DropDownList></td>
-                </tr>
-                <tr>
-                    <td>Thành phần gia đình: </td>
-                    <td class="style3">
-                        <asp:DropDownList ID="txtThanhPhanGiaDinh" runat="Server" Width="200px" Height="25px">
-                            <asp:ListItem Text="" Value=""></asp:ListItem>
-                            <asp:ListItem>Công nhân</asp:ListItem>
-                            <asp:ListItem>Nông dân</asp:ListItem>
-                            <asp:ListItem>Đảng viên</asp:ListItem>
-                            <asp:ListItem>Viên chức</asp:ListItem>
-                            <asp:ListItem>Tri thức</asp:ListItem>
-                            <asp:ListItem>Quân nhân</asp:ListItem>
-                            <asp:ListItem>Thợ thủ công</asp:ListItem>
-                            <asp:ListItem>Tiểu thương</asp:ListItem>
-                            <asp:ListItem>Tiểu chủ</asp:ListItem>
-                            <asp:ListItem>Địa chủ</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-
+                </tr>
+                <tr>
+                    <td>Tôn giáo: </td>
+                    <td>
+                        <asp:DropDownList ID="txtTonGiao" runat="Server" Width="200px">
+                        </asp:DropDownList>
+                    </td>
+                    <td>Thành phần gia đình: </td>
+                    <td>
+                        <asp:DropDownList ID="txtThanhPhanGiaDinh" runat="Server" Height="25px" Width="200px">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
                     <td>Tình trạng hôn nhân: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtTinhTrangHonNhan" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td>
+                        <asp:TextBox ID="txtTinhTrangHonNhan" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Số CMND: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtSoCMND" runat="Server" Width="200px"></asp:TextBox></td>
+                    <td>
+                        <asp:TextBox ID="txtSoCMND" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
                     <td>Ngày cấp CMND: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtNgayCapCMND" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td>
+                        <asp:TextBox ID="txtNgayCapCMND" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Nơi cấp CMND: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtNoiCapCMND" runat="Server" Width="200px"></asp:TextBox></td>
-
-                    <td>Ảnh 4x6</td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtAnh4x6" runat="Server" Width="200px"></asp:TextBox></td>
+                    <td>
+                        <asp:TextBox ID="txtNoiCapCMND" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
                     <td>Email: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtEmail" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td>
+                        <asp:TextBox ID="txtEmail" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                     <td>Số điện thoại: </td>
-                    <td class="style3">
-                        <asp:TextBox ID="txtSDT" runat="Server" Width="200px"></asp:TextBox></td>
+                    <td>
+                        <asp:TextBox ID="txtSDT" runat="Server" Width="200px"></asp:TextBox>
+                    </td>
                 </tr>
             </table>
         </asp:Panel>
-        
-         <asp:Panel CssClass="cssPanel" ID="PanelThongTinDangVien" GroupingText="Thông tin Đảng viên" runat="server">
+
+        <asp:Panel CssClass="cssPanel" ID="PanelThongTinDangVien" GroupingText="Thông tin Đảng viên" runat="server">
             <table style="border: none;">
                 <tr>
                     <td>Ngày vào Đảng: </td>
@@ -237,7 +170,7 @@
 
             </table>
         </asp:Panel>
-<%--        <asp:Panel CssClass="cssPanel" ID="PanelThongTinKyLuat" GroupingText="Thông tin kỷ luật" runat="server">
+        <%--        <asp:Panel CssClass="cssPanel" ID="PanelThongTinKyLuat" GroupingText="Thông tin kỷ luật" runat="server">
             <table style="border: none;">
                 <tr>
                     <td>Ngày bị kỷ luật: </td>
@@ -249,7 +182,7 @@
                 </tr>
             </table>
         </asp:Panel>--%>
-        
+
 
         <asp:Panel CssClass="cssPanel" ID="PanelThongTinTuyenDung" GroupingText="Thông tin tuyển dụng" runat="server">
             <table style="border: none;">
@@ -549,7 +482,7 @@
             </table>
         </asp:Panel>
 
-       
+
     </div>
     <div>
         <div class="back">

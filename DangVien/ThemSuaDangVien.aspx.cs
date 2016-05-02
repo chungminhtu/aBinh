@@ -61,7 +61,7 @@ public partial class ThemSuaDangVien : Page
                 txtSoCMND.Text = item.SoCMND;
                 txtNgayCapCMND.Text = item.NgayCapCMND;
                 txtNoiCapCMND.Text = item.NoiCapCMND;
-                txtAnh4x6.Text = item.Anh4x6;
+                imgAnhDaiDien.ImageUrl = item.Image;
                 txtEmail.Text = item.Email;
                 txtSDT.Text = item.SDT;
                 txtNgheNghiepKhiTuyenDung.Text = item.NgheNghiepKhiTuyenDung;
