@@ -24,7 +24,7 @@ public class ServiceDangVien : WebService
             bool bAuthen = a.fAuthen(username, password);
             if (bAuthen)
             {
-                return db.ViewALLCBs.ToList();
+                return db.ViewALLCBs.Where(x => x.KhongLaDangVien != 1).ToList();
             }
             else
                 return null;
@@ -45,17 +45,15 @@ public class ServiceDangVien : WebService
             bool bAuthen = a.fAuthen(username, password);
             if (bAuthen)
             {
+                var ab =
+                  (from k in db.ViewALLCBs
+                   where (tk.HoTen != "" ? k.HoTenKhaiSinh.Contains(tk.HoTen) : true)
+                       && (tk.MaCB != "" ? k.MaCoSoDangQLDangVien.Contains(tk.MaCB) : true)
+                       && (tk.GioiTinh != "" ? k.GioiTinh == tk.GioiTinh : true)
+                       && (tk.ChuyenMonNghiepVu != "" ? k.ChuyenNganh == tk.ChuyenMonNghiepVu : true)
+                   select k).Where(x => x.KhongLaDangVien != 1).ToList();
 
-                return (from k in db.ViewALLCBs
-                        where tk.HoTen != "" ? k.HoTenKhaiSinh.Contains(tk.HoTen) : true
-                            && tk.MaCB != "" ? k.SoHieuCB.Contains(tk.MaCB) : true
-                            && tk.GioiTinh != "" ? k.GioiTinh == tk.GioiTinh : true
-                            && tk.TrinhDoHocVan != "" ? k.TrinhDoHocVan == tk.TrinhDoHocVan : true
-                            && tk.NgheNghiep != "" ? k.NgheNghiepKhiTuyenDung == tk.NgheNghiep : true
-                            && tk.ThanhPhanGiaDinh != "" ? k.ThanhPhanGiaDinh == tk.ThanhPhanGiaDinh : true
-                            && tk.DanToc != "" ? k.DanToc == tk.DanToc : true
-                            && tk.TonGiao != "" ? k.TonGiao == tk.TonGiao : true
-                        select k).ToList();
+                return ab;
             }
             else
                 return null;
@@ -66,7 +64,7 @@ public class ServiceDangVien : WebService
         }
     }
 
-  
+
 
     [WebMethod]
     public bool LuuDangVien(string username, string password, DangVien kh)
@@ -104,7 +102,7 @@ public class ServiceDangVien : WebService
                 if (isInsert == true)
                 {
                     db.DangViens.Add(dv);
-                } 
+                }
 
                 db.SaveChanges();
                 return true;
@@ -118,7 +116,34 @@ public class ServiceDangVien : WebService
         }
     }
 
-   
+    [WebMethod]
+    public bool XoaDangVien(string username, string password, int MaCB)
+    {
+        try
+        {
+            authen a1 = new authen();
+            bool bAuthen = a1.fAuthen(username, password);
+            if (bAuthen)
+            {
+
+                CanBo dv = (from c in db.CanBoes
+                            where c.ID == MaCB
+                            select c).FirstOrDefault();
+                dv.KhongLaDangVien = 1;
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return bAuthen;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+
+
 
     [WebMethod]
     public ViewALLCB GetThongTin1DangVien(string username, string password, int MaCB)
@@ -142,6 +167,8 @@ public class ServiceDangVien : WebService
             return null;
         }
     }
+
+
 
     //-------------------------------------------------------------------------------------------
     #endregion

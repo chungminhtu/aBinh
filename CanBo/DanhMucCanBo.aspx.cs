@@ -60,8 +60,6 @@ public partial class DanhMucCanBo : System.Web.UI.Page
         tk.MaCB = txtMaCB.Text;
         tk.ChuyenMonNghiepVu = txtChuyenMonNghiepVu.SelectedValue;
         tk.TrinhDoHocVan = txtTrinhDoHocVan.SelectedValue;
-        tk.NgheNghiep = txtNgheNghiep.SelectedValue;
-        tk.ThanhPhanGiaDinh = txtThanhPhanGiaDinh.SelectedValue;
         tk.DanToc = txtDanToc.SelectedValue;
         tk.TonGiao = txtTonGiao.SelectedValue;
         GridCanBo.DataSource = service.TimKiemCanBo("TheBinh", "12345678", tk);

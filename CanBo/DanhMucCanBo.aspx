@@ -11,10 +11,6 @@
                 <td>Họ và Tên:</td>
                 <td>
                     <asp:TextBox ID="txtHoTenKhaiSinh" runat="Server" Width="250px"></asp:TextBox></td>
-                <td>Mã cán bộ: </td>
-                <td>
-                    <asp:TextBox ID="txtMaCB" runat="Server" Width="250px"></asp:TextBox>
-                </td>
                 <td>Giới tính: </td>
                 <td>
                     <asp:DropDownList ID="txtGioiTinh" runat="Server" Width="250px" Height="25px">
@@ -22,6 +18,10 @@
                         <asp:ListItem>Nam</asp:ListItem>
                         <asp:ListItem>Nữ</asp:ListItem>
                     </asp:DropDownList>
+                </td>
+                <td>Mã cán bộ: </td>
+                <td>
+                    <asp:TextBox ID="txtMaCB" runat="Server" Width="250px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -55,42 +55,9 @@
                         <asp:ListItem>Cao cấp</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                <td>Nghề nghiệp:</td>
-                <td>
-                    <asp:DropDownList ID="txtNgheNghiep" runat="Server" Width="250px" Height="25px">
-                        <asp:ListItem Text="" Value=""></asp:ListItem>
-                        <asp:ListItem>Cán bộ công chức</asp:ListItem>
-                        <asp:ListItem>Viên chức sự nghiệp</asp:ListItem>
-                        <asp:ListItem>Viên chức kinh doanh</asp:ListItem>
-                        <asp:ListItem>Công nhân, lao động</asp:ListItem>
-                        <asp:ListItem>Nông dân</asp:ListItem>
-                        <asp:ListItem>Sỹ quan, chiến sỹ</asp:ListItem>
-                        <asp:ListItem>Sinh viên, học sinh</asp:ListItem>
-                        <asp:ListItem>Lao động các ngành nghề</asp:ListItem>
-                        <asp:ListItem>Đảng viên đã nghỉ hưu</asp:ListItem>
-                        <asp:ListItem>Đảng viên bị mất chức</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
 
             </tr>
             <tr>
-                <td>Thành phần gia đình: </td>
-                <td>
-                    <asp:DropDownList ID="txtThanhPhanGiaDinh" runat="Server" Width="250px" Height="25px">
-                        <asp:ListItem Text="" Value=""></asp:ListItem>
-                        <asp:ListItem>Công nhân</asp:ListItem>
-                        <asp:ListItem>Nông dân</asp:ListItem>
-                        <asp:ListItem>Cán bộ</asp:ListItem>
-                        <asp:ListItem>Viên chức</asp:ListItem>
-                        <asp:ListItem>Tri thức</asp:ListItem>
-                        <asp:ListItem>Quân nhân</asp:ListItem>
-                        <asp:ListItem>Thợ thủ công</asp:ListItem>
-                        <asp:ListItem>Tiểu thương</asp:ListItem>
-                        <asp:ListItem>Tiểu chủ</asp:ListItem>
-                        <asp:ListItem>Địa chủ</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-
                 <td>Dân tộc: </td>
                 <td>
                     <asp:DropDownList ID="txtDanToc" runat="Server" Width="250px" Height="25px">
@@ -211,7 +178,7 @@
                         <asp:Label ID="lblHoTenKhaiSinh" runat="server" Text='<%# Eval("HoTenKhaiSinh") %>'></asp:Label>
                     </ItemTemplate>
                     <ItemStyle Width="150px"></ItemStyle>
-                </asp:TemplateField> 
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Giới tính">
                     <ItemTemplate>
                         <asp:Label ID="lblGioiTinh" runat="server" Text='<%# Eval("GioiTinh") %>'></asp:Label>

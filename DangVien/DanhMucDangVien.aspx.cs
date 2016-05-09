@@ -21,19 +21,36 @@ public partial class DanhMucDangVien : System.Web.UI.Page
 
     protected void GridDangVien_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        if (e.CommandName == "MyButtonClick")
+        if (e.CommandName == "View")
+        {
+            int rowindex = Convert.ToInt32(e.CommandArgument);
+
+            GridViewRow row = GridDangVien.Rows[rowindex];
+            int MaCB = Common.TryParseObjectToInt((row.FindControl("lblID") as Label).Text);
+            Response.Redirect("ThemSuaDangVien.aspx?ID=" + MaCB+"&&View=true");
+        }
+        if (e.CommandName == "Edit")
         {
             int rowindex = Convert.ToInt32(e.CommandArgument);
 
             GridViewRow row = GridDangVien.Rows[rowindex];
             int MaCB = Common.TryParseObjectToInt((row.FindControl("lblID") as Label).Text);
             Response.Redirect("ThemSuaDangVien.aspx?ID=" + MaCB);
-        }
+        } 
         else if (e.CommandName == "Add")
         {
             Response.Redirect("ThemSuaDangVien.aspx");
         }
     }
+
+    protected void OnRowDeletingCB(object sender, GridViewDeleteEventArgs e)
+    {
+        GridViewRow row = GridDangVien.Rows[e.RowIndex];
+        int MaCB = Common.TryParseObjectToInt((row.FindControl("lblID") as Label).Text);
+        service.XoaDangVien("TheBinh", "12345678", MaCB);
+        BindGridCB();
+    }
+
     protected void GridDangVien_PreRender(object sender, EventArgs e)
     {
         var gridView = (GridView)sender;
@@ -51,12 +68,7 @@ public partial class DanhMucDangVien : System.Web.UI.Page
         tk.HoTen = txtHoTenKhaiSinh.Text;
         tk.GioiTinh = txtGioiTinh.SelectedValue;
         tk.MaCB = txtMaCB.Text;
-        tk.ChuyenMonNghiepVu = txtChuyenMonNghiepVu.SelectedValue;
-        tk.TrinhDoHocVan = txtTrinhDoHocVan.SelectedValue;
-        tk.NgheNghiep = txtNgheNghiep.SelectedValue;
-        tk.ThanhPhanGiaDinh = txtThanhPhanGiaDinh.SelectedValue;
-        tk.DanToc = txtDanToc.SelectedValue;
-        tk.TonGiao = txtTonGiao.SelectedValue;
+        tk.ChuyenMonNghiepVu = txtChuyenMonNghiepVu.SelectedValue; 
         GridDangVien.DataSource = service.TimKiemDangVien("TheBinh", "12345678", tk);
         GridDangVien.DataBind();
     }

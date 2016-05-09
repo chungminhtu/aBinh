@@ -10,6 +10,7 @@
           <EntitySet Name="CongViecChinhDangLam" EntityType="CoSoDuLieuTichHopModel.Store.CongViecChinhDangLam" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DangVien" EntityType="CoSoDuLieuTichHopModel.Store.DangVien" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DanToc" EntityType="CoSoDuLieuTichHopModel.Store.DanToc" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DiaPhuong" EntityType="CoSoDuLieuTichHopModel.Store.DiaPhuong" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="GioiTinh" EntityType="CoSoDuLieuTichHopModel.Store.GioiTinh" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="HocHam" EntityType="CoSoDuLieuTichHopModel.Store.HocHam" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="HocVi" EntityType="CoSoDuLieuTichHopModel.Store.HocVi" store:Type="Tables" Schema="dbo" />
@@ -48,6 +49,7 @@
       [ViewALLCB].[Image] AS [Image], 
       [ViewALLCB].[Email] AS [Email], 
       [ViewALLCB].[SDT] AS [SDT], 
+      [ViewALLCB].[KhongLaDangVien] AS [KhongLaDangVien], 
       [ViewALLCB].[NgheNghiepKhiTuyenDung] AS [NgheNghiepKhiTuyenDung], 
       [ViewALLCB].[NgayTuyenDung] AS [NgayTuyenDung], 
       [ViewALLCB].[TenCoQuanTuyenDung] AS [TenCoQuanTuyenDung], 
@@ -142,6 +144,7 @@
           <Property Name="ChucVuKiemNhiem" Type="nvarchar" MaxLength="500" />
           <Property Name="PhuCapChucVu" Type="numeric" Precision="8" Scale="2" />
           <Property Name="CongViecChinhDangLam" Type="nvarchar" MaxLength="500" />
+          <Property Name="KhongLaDangVien" Type="int" />
         </EntityType>
         <EntityType Name="CongViecChinhDangLam">
           <Key>
@@ -174,6 +177,22 @@
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TenDanToc" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DiaPhuong">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="AdminID" Type="int" />
+          <Property Name="MAPID" Type="int" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="IDBanDo" Type="nvarchar" MaxLength="500" />
+          <Property Name="UniqueName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TYPE" Type="varchar" MaxLength="5" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="GioiTinh">
           <Key>
@@ -331,6 +350,7 @@
           <Property Name="Image" Type="ntext" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+          <Property Name="KhongLaDangVien" Type="int" />
           <Property Name="NgheNghiepKhiTuyenDung" Type="nvarchar" MaxLength="100" />
           <Property Name="NgayTuyenDung" Type="nvarchar" MaxLength="50" />
           <Property Name="TenCoQuanTuyenDung" Type="nvarchar" MaxLength="100" />
@@ -407,6 +427,7 @@
           <EntitySet Name="TrinhDoLyLuanChinhTris" EntityType="CoSoDuLieuTichHopModel.TrinhDoLyLuanChinhTri" />
           <EntitySet Name="TrinhDoQuanLyNhaNuocs" EntityType="CoSoDuLieuTichHopModel.TrinhDoQuanLyNhaNuoc" />
           <EntitySet Name="ViewALLCBs" EntityType="CoSoDuLieuTichHopModel.ViewALLCB" />
+          <EntitySet Name="DiaPhuongs" EntityType="CoSoDuLieuTichHopModel.DiaPhuong" />
         </EntityContainer>
         <EntityType Name="CanBo">
           <Key>
@@ -449,6 +470,7 @@
           <Property Type="String" Name="ChucVuKiemNhiem" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Decimal" Name="PhuCapChucVu" Precision="8" Scale="2" />
           <Property Type="String" Name="CongViecChinhDangLam" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KhongLaDangVien" />
         </EntityType>
         <EntityType Name="CongViecChinhDangLam">
           <Key>
@@ -685,6 +707,23 @@
           <Property Type="String" Name="ChucVuTrongDang" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="NgayBiKyluat" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="LyDoKyLuat" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KhongLaDangVien" />
+        </EntityType>
+        <EntityType Name="DiaPhuong">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ParentID" />
+          <Property Type="Int32" Name="AdminID" />
+          <Property Type="Int32" Name="MAPID" />
+          <Property Type="String" Name="NAME" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IDBanDo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UniqueName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TYPE" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Longitude" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Latitude" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelCode" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -695,6 +734,7 @@
           <EntitySetMapping Name="CanBoes">
             <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.CanBo">
               <MappingFragment StoreEntitySet="CanBo">
+                <ScalarProperty Name="KhongLaDangVien" ColumnName="KhongLaDangVien" />
                 <ScalarProperty Name="CongViecChinhDangLam" ColumnName="CongViecChinhDangLam" />
                 <ScalarProperty Name="PhuCapChucVu" ColumnName="PhuCapChucVu" />
                 <ScalarProperty Name="ChucVuKiemNhiem" ColumnName="ChucVuKiemNhiem" />
@@ -916,6 +956,7 @@
           <EntitySetMapping Name="ViewALLCBs">
             <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.ViewALLCB">
               <MappingFragment StoreEntitySet="ViewALLCB">
+                <ScalarProperty Name="KhongLaDangVien" ColumnName="KhongLaDangVien" />
                 <ScalarProperty Name="LyDoKyLuat" ColumnName="LyDoKyLuat" />
                 <ScalarProperty Name="NgayBiKyluat" ColumnName="NgayBiKyluat" />
                 <ScalarProperty Name="ChucVuTrongDang" ColumnName="ChucVuTrongDang" />
@@ -986,6 +1027,23 @@
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
                 <ScalarProperty Name="TenGoiKhac" ColumnName="TenGoiKhac" />
                 <ScalarProperty Name="HoTenKhaiSinh" ColumnName="HoTenKhaiSinh" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiaPhuongs">
+            <EntityTypeMapping TypeName="CoSoDuLieuTichHopModel.DiaPhuong">
+              <MappingFragment StoreEntitySet="DiaPhuong">
+                <ScalarProperty Name="TelCode" ColumnName="TelCode" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="UniqueName" ColumnName="UniqueName" />
+                <ScalarProperty Name="IDBanDo" ColumnName="IDBanDo" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="MAPID" ColumnName="MAPID" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

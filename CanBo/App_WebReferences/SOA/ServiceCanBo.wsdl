@@ -95,6 +95,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ChucVuTrongDang" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="NgayBiKyluat" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="LyDoKyLuat" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KhongLaDangVien" nillable="true" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:element name="TimKiemCanBo">
@@ -615,6 +616,73 @@
           <s:element minOccurs="0" maxOccurs="1" name="TenCongViecChinhDangLam" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="LoadTinh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadTinhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadTinhResult" type="tns:ArrayOfDiaPhuong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDiaPhuong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DiaPhuong" nillable="true" type="tns:DiaPhuong" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DiaPhuong">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdminID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MAPID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDBanDo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UniqueName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Longitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Latitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoadHuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadHuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadHuyenResult" type="tns:ArrayOfDiaPhuong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadXa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadXaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadXaResult" type="tns:ArrayOfDiaPhuong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="DanhSachCanBoSoapIn">
@@ -737,6 +805,24 @@
   <wsdl:message name="CongViecChinhDangLamSoapOut">
     <wsdl:part name="parameters" element="tns:CongViecChinhDangLamResponse" />
   </wsdl:message>
+  <wsdl:message name="LoadTinhSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadTinh" />
+  </wsdl:message>
+  <wsdl:message name="LoadTinhSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadTinhResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadHuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadHuyen" />
+  </wsdl:message>
+  <wsdl:message name="LoadHuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadHuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadXaSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadXa" />
+  </wsdl:message>
+  <wsdl:message name="LoadXaSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadXaResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiceCanBoSoap">
     <wsdl:operation name="DanhSachCanBo">
       <wsdl:input message="tns:DanhSachCanBoSoapIn" />
@@ -817,6 +903,18 @@
     <wsdl:operation name="CongViecChinhDangLam">
       <wsdl:input message="tns:CongViecChinhDangLamSoapIn" />
       <wsdl:output message="tns:CongViecChinhDangLamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTinh">
+      <wsdl:input message="tns:LoadTinhSoapIn" />
+      <wsdl:output message="tns:LoadTinhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadHuyen">
+      <wsdl:input message="tns:LoadHuyenSoapIn" />
+      <wsdl:output message="tns:LoadHuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadXa">
+      <wsdl:input message="tns:LoadXaSoapIn" />
+      <wsdl:output message="tns:LoadXaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceCanBoSoap" type="tns:ServiceCanBoSoap">
@@ -1001,6 +1099,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LoadTinh">
+      <soap:operation soapAction="http://tempuri.org/LoadTinh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadHuyen">
+      <soap:operation soapAction="http://tempuri.org/LoadHuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadXa">
+      <soap:operation soapAction="http://tempuri.org/LoadXa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceCanBoSoap12" type="tns:ServiceCanBoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1177,6 +1302,33 @@
     </wsdl:operation>
     <wsdl:operation name="CongViecChinhDangLam">
       <soap12:operation soapAction="http://tempuri.org/CongViecChinhDangLam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTinh">
+      <soap12:operation soapAction="http://tempuri.org/LoadTinh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadHuyen">
+      <soap12:operation soapAction="http://tempuri.org/LoadHuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadXa">
+      <soap12:operation soapAction="http://tempuri.org/LoadXa" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

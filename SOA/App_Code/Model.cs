@@ -49,6 +49,7 @@ public partial class CanBo
     public string ChucVuKiemNhiem { get; set; }
     public Nullable<decimal> PhuCapChucVu { get; set; }
     public string CongViecChinhDangLam { get; set; }
+    public Nullable<int> KhongLaDangVien { get; set; }
 }
 
 public partial class CongViecChinhDangLam
@@ -78,6 +79,21 @@ public partial class DanToc
 {
     public int ID { get; set; }
     public string TenDanToc { get; set; }
+}
+
+public partial class DiaPhuong
+{
+    public int ID { get; set; }
+    public Nullable<int> ParentID { get; set; }
+    public Nullable<int> AdminID { get; set; }
+    public Nullable<int> MAPID { get; set; }
+    public string NAME { get; set; }
+    public string IDBanDo { get; set; }
+    public string UniqueName { get; set; }
+    public string TYPE { get; set; }
+    public string Longitude { get; set; }
+    public string Latitude { get; set; }
+    public string TelCode { get; set; }
 }
 
 public partial class GioiTinh
@@ -266,4 +282,5 @@ public partial class ViewALLCB
     public string ChucVuTrongDang { get; set; }
     public string NgayBiKyluat { get; set; }
     public string LyDoKyLuat { get; set; }
+    public Nullable<int> KhongLaDangVien { get; set; }
 }

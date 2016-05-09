@@ -11,10 +11,12 @@
                 <td>Họ và Tên:</td>
                 <td>
                     <asp:TextBox ID="txtHoTenKhaiSinh" runat="Server" Width="250px"></asp:TextBox></td>
-                <td>Mã cán bộ: </td>
+                <td>Số hiệu Đảng viên: </td>
                 <td>
                     <asp:TextBox ID="txtMaCB" runat="Server" Width="250px"></asp:TextBox>
                 </td>
+            </tr>
+            <tr>
                 <td>Giới tính: </td>
                 <td>
                     <asp:DropDownList ID="txtGioiTinh" runat="Server" Width="250px" Height="25px">
@@ -23,8 +25,7 @@
                         <asp:ListItem>Nữ</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-            </tr>
-            <tr>
+
 
                 <td>Chuyên môn nghiệp vụ: </td>
                 <td>
@@ -42,130 +43,7 @@
                         <asp:ListItem>Viện Sỹ</asp:ListItem>
                     </asp:DropDownList></td>
 
-                <td>Trình độ học vấn:</td>
-                <td>
-                    <asp:DropDownList ID="txtTrinhDoHocVan" runat="Server" Width="250px" Height="25px">
-                        <asp:ListItem Text="" Value=""></asp:ListItem>
-                        <asp:ListItem>Trung cấp</asp:ListItem>
-                        <asp:ListItem>Cao đẳng</asp:ListItem>
-                        <asp:ListItem>Đại học</asp:ListItem>
-                        <asp:ListItem>Thạc sỹ</asp:ListItem>
-                        <asp:ListItem>Phó tiến sỹ</asp:ListItem>
-                        <asp:ListItem>Tiến sỹ</asp:ListItem>
-                        <asp:ListItem>Cao cấp</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-                <td>Nghề nghiệp:</td>
-                <td>
-                    <asp:DropDownList ID="txtNgheNghiep" runat="Server" Width="250px" Height="25px">
-                        <asp:ListItem Text="" Value=""></asp:ListItem>
-                        <asp:ListItem>Cán bộ công chức</asp:ListItem>
-                        <asp:ListItem>Viên chức sự nghiệp</asp:ListItem>
-                        <asp:ListItem>Viên chức kinh doanh</asp:ListItem>
-                        <asp:ListItem>Công nhân, lao động</asp:ListItem>
-                        <asp:ListItem>Nông dân</asp:ListItem>
-                        <asp:ListItem>Sỹ quan, chiến sỹ</asp:ListItem>
-                        <asp:ListItem>Sinh viên, học sinh</asp:ListItem>
-                        <asp:ListItem>Lao động các ngành nghề</asp:ListItem>
-                        <asp:ListItem>Đảng viên đã nghỉ hưu</asp:ListItem>
-                        <asp:ListItem>Đảng viên bị mất chức</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
 
-            </tr>
-            <tr>
-                <td>Thành phần gia đình: </td>
-                <td>
-                    <asp:DropDownList ID="txtThanhPhanGiaDinh" runat="Server" Width="250px" Height="25px">
-                        <asp:ListItem Text="" Value=""></asp:ListItem>
-                        <asp:ListItem>Công nhân</asp:ListItem>
-                        <asp:ListItem>Nông dân</asp:ListItem>
-                        <asp:ListItem>Cán bộ</asp:ListItem>
-                        <asp:ListItem>Viên chức</asp:ListItem>
-                        <asp:ListItem>Tri thức</asp:ListItem>
-                        <asp:ListItem>Quân nhân</asp:ListItem>
-                        <asp:ListItem>Thợ thủ công</asp:ListItem>
-                        <asp:ListItem>Tiểu thương</asp:ListItem>
-                        <asp:ListItem>Tiểu chủ</asp:ListItem>
-                        <asp:ListItem>Địa chủ</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-
-                <td>Dân tộc: </td>
-                <td>
-                    <asp:DropDownList ID="txtDanToc" runat="Server" Width="250px" Height="25px">
-                        <asp:ListItem Text="" Value=""></asp:ListItem>
-                        <asp:ListItem>Kinh</asp:ListItem>
-                        <asp:ListItem>Chứt</asp:ListItem>
-                        <asp:ListItem>Mường</asp:ListItem>
-                        <asp:ListItem>Thổ</asp:ListItem>
-                        <asp:ListItem>Bố Y</asp:ListItem>
-                        <asp:ListItem>Giáy</asp:ListItem>
-                        <asp:ListItem>Lào</asp:ListItem>
-                        <asp:ListItem>Lự</asp:ListItem>
-                        <asp:ListItem>Nùng</asp:ListItem>
-                        <asp:ListItem>Sán Chay</asp:ListItem>
-                        <asp:ListItem>Tày</asp:ListItem>
-                        <asp:ListItem>Thái</asp:ListItem>
-                        <asp:ListItem>Cờ Lao</asp:ListItem>
-                        <asp:ListItem>La Chí</asp:ListItem>
-                        <asp:ListItem>La Ha</asp:ListItem>
-                        <asp:ListItem>Pu Péo</asp:ListItem>
-                        <asp:ListItem>Ba Na</asp:ListItem>
-                        <asp:ListItem>Brâu</asp:ListItem>
-                        <asp:ListItem>Bru - Vân Kiều</asp:ListItem>
-                        <asp:ListItem>Chơ Ro</asp:ListItem>
-                        <asp:ListItem>Co</asp:ListItem>
-                        <asp:ListItem>Cơ Ho</asp:ListItem>
-                        <asp:ListItem>Cơ Tu</asp:ListItem>
-                        <asp:ListItem>Giẻ Triêng</asp:ListItem>
-                        <asp:ListItem>Hrê</asp:ListItem>
-                        <asp:ListItem>Kháng</asp:ListItem>
-                        <asp:ListItem>Khơ Me</asp:ListItem>
-                        <asp:ListItem>Khơ Mú</asp:ListItem>
-                        <asp:ListItem>Mạ</asp:ListItem>
-                        <asp:ListItem>Mảng</asp:ListItem>
-                        <asp:ListItem>M’Nông</asp:ListItem>
-                        <asp:ListItem>Ơ Đu</asp:ListItem>
-                        <asp:ListItem>Rơ Măm</asp:ListItem>
-                        <asp:ListItem>Tà Ôi</asp:ListItem>
-                        <asp:ListItem>Xinh Mun</asp:ListItem>
-                        <asp:ListItem>Xơ Đăng</asp:ListItem>
-                        <asp:ListItem>X’Tiêng</asp:ListItem>
-                        <asp:ListItem>Dao</asp:ListItem>
-                        <asp:ListItem>H’Mông</asp:ListItem>
-                        <asp:ListItem>Pà Thẻn</asp:ListItem>
-                        <asp:ListItem>Chăm</asp:ListItem>
-                        <asp:ListItem>Chu Ru</asp:ListItem>
-                        <asp:ListItem>Ê Đê</asp:ListItem>
-                        <asp:ListItem>Gia Rai</asp:ListItem>
-                        <asp:ListItem>Ra Glai</asp:ListItem>
-                        <asp:ListItem>Hoa</asp:ListItem>
-                        <asp:ListItem>Ngái</asp:ListItem>
-                        <asp:ListItem>Sán Dìu</asp:ListItem>
-                        <asp:ListItem>Cống</asp:ListItem>
-                        <asp:ListItem>Hà Nhì</asp:ListItem>
-                        <asp:ListItem>La Hủ</asp:ListItem>
-                        <asp:ListItem>Lô Lô</asp:ListItem>
-                        <asp:ListItem>Phù Lá</asp:ListItem>
-                        <asp:ListItem>Si La</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-
-                <td>Tôn giáo: </td>
-                <td>
-                    <asp:DropDownList ID="txtTonGiao" runat="Server" Width="250px" Height="25px">
-                        <asp:ListItem Text="" Value=""></asp:ListItem>
-                        <asp:ListItem>Phật giáo</asp:ListItem>
-                        <asp:ListItem>Công giáo</asp:ListItem>
-                        <asp:ListItem>Cao đài</asp:ListItem>
-                        <asp:ListItem>Hòa hảo</asp:ListItem>
-                        <asp:ListItem>Tin lành</asp:ListItem>
-                        <asp:ListItem>Hồi giáo</asp:ListItem>
-                        <asp:ListItem>T.Giáo khác</asp:ListItem>
-                        <asp:ListItem>Không có</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
             </tr>
         </table>
         <div>
@@ -176,16 +54,18 @@
     <p></p>
     <div>
         <asp:GridView ID="GridDangVien" runat="server" CellPadding="4"
-            Width="100%"  OnRowCommand="GridDangVien_RowCommand" OnPreRender="GridDangVien_PreRender" OnRowCreated="GridDangVien_OnRowCreated"
+            Width="100%" OnRowDeleting="OnRowDeletingCB"  OnRowCommand="GridDangVien_RowCommand" OnPreRender="GridDangVien_PreRender" OnRowCreated="GridDangVien_OnRowCreated"
             AutoGenerateColumns="False" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
-                        <asp:Button class="editButton" ID="Button1" runat="server" CausesValidation="False" CommandName="MyButtonClick" CommandArgument='<%# Container.DataItemIndex %>' Text="&#xf044; Xem Đảng Viên" />
-                    </ItemTemplate> 
+                        <asp:Button class="editButton" ID="Button2" runat="server" CausesValidation="False" CommandName="View" CommandArgument='<%# Container.DataItemIndex %>' Text="&#xf044; Xem" />
+                        <asp:Button class="editButton" ID="Button3" runat="server" CausesValidation="False" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' Text="&#xf044; Sửa" />
+                        <asp:Button class="editButton" ID="Button1" runat="server" CausesValidation="False" CommandName="Delete" CommandArgument='<%# Container.DataItemIndex %>' Text="&#xf044; Xoá"  OnClientClick="return confirm('Bạn có muốn xóa dữ liệu này không?');" />
+                    </ItemTemplate>
                     <ItemStyle />
-                </asp:TemplateField> 
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="ID">
                     <ItemTemplate>
                         <asp:Label ID="lblID" runat="server" Text='<%# Eval("ID") %>'></asp:Label>
@@ -203,7 +83,7 @@
                         <asp:Label ID="lblHoTenKhaiSinh" runat="server" Text='<%# Eval("HoTenKhaiSinh") %>'></asp:Label>
                     </ItemTemplate>
                     <ItemStyle Width="150px"></ItemStyle>
-                </asp:TemplateField> 
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Giới tính">
                     <ItemTemplate>
                         <asp:Label ID="lblGioiTinh" runat="server" Text='<%# Eval("GioiTinh") %>'></asp:Label>

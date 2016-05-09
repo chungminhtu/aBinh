@@ -21,6 +21,12 @@ public partial class ThemSuaDangVien : Page
         try
         {
             var id = Common.TryParseObjectToInt(Request.QueryString["ID"] + "");
+            var view = Request.QueryString["View"] + "" ;
+            if (view!="")
+            {
+                PanelThongTinDangVien.Enabled = false;
+            }
+
             var item = es.GetThongTin1DangVien("TheBinh", "12345678", id);
 
             if (id != 0)
@@ -40,9 +46,7 @@ public partial class ThemSuaDangVien : Page
                 txtSoTheDangVien.Text = item.SoTheDangVien;
                 txtMaCoSoDangQLDangVien.Text = item.MaCoSoDangQLDangVien;
                 txtChucVuTrongDang.Text = item.ChucVuTrongDang;
-                
-                //txtNgayBiKyluat.Text = item.NgayBiKyluat;
-                //txtLyDoKyLuat.Text = item.LyDoKyLuat;
+                 
 
                 txtHoTenKhaiSinh.Text = item.HoTenKhaiSinh;
                 txtTenGoiKhac.Text = item.TenGoiKhac;

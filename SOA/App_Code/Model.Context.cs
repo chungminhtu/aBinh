@@ -43,4 +43,5 @@ public partial class CoSoDuLieuTichHop : DbContext
     public DbSet<TrinhDoLyLuanChinhTri> TrinhDoLyLuanChinhTris { get; set; }
     public DbSet<TrinhDoQuanLyNhaNuoc> TrinhDoQuanLyNhaNuocs { get; set; }
     public DbSet<ViewALLCB> ViewALLCBs { get; set; }
+    public DbSet<DiaPhuong> DiaPhuongs { get; set; }
 }

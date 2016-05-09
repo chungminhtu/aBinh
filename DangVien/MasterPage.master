@@ -112,9 +112,7 @@
         #ctl00_ContentPlaceHolder_PanelThongTinCongChuc, #ctl00_ContentPlaceHolder_PanelThongTinCongChuc input, #ctl00_ContentPlaceHolder_PanelThongTinCongChuc select,
         #ctl00_ContentPlaceHolder_PanelThongTinKhenThuong, #ctl00_ContentPlaceHolder_PanelThongTinKhenThuong input, #ctl00_ContentPlaceHolder_PanelThongTinKhenThuong select,
         #ctl00_ContentPlaceHolder_PanelThongTinSucKhoe, #ctl00_ContentPlaceHolder_PanelThongTinSucKhoe input, #ctl00_ContentPlaceHolder_PanelThongTinSucKhoe select,
-        #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh, #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh input, #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh select {
-
-            
+        #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh, #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh input, #ctl00_ContentPlaceHolder_PanelThongTinGiaDinh select { 
             pointer-events: none;
             background-color: #eee;
         }

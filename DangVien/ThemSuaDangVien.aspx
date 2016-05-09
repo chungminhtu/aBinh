@@ -36,7 +36,7 @@
                     <td>Giới tính: </td>
                     <td>
                         <asp:DropDownList ID="txtGioiTinh" runat="Server" Height="25px" Width="200px">
-                        </asp:DropDownList>
+                        </asp:DropDownList> 
                     </td>
                 </tr>
                 <tr>

@@ -45,9 +45,6 @@ public partial class ThemSuaCanBo : Page
                 txtMaCoSoDangQLDangVien.Text = item.MaCoSoDangQLDangVien;
                 txtChucVuTrongDang.Text = item.ChucVuTrongDang;
 
-                txtNgayBiKyluat.Text = item.NgayBiKyluat;
-                txtLyDoKyLuat.Text = item.LyDoKyLuat;
-
 
                 imgAnhDaiDien.ImageUrl = item.Image;
                 txtHoTenKhaiSinh.Text = item.HoTenKhaiSinh;
@@ -95,6 +92,7 @@ public partial class ThemSuaCanBo : Page
                 txtChucVuHienTai.Text = item.ChucVuHienTai;
                 txtChucVuKiemNhiem.Text = item.ChucVuKiemNhiem;
                 txtPhuCapChucVu.Text = item.PhuCapChucVu + "";
+
             }
             else
             {
@@ -226,6 +224,27 @@ public partial class ThemSuaCanBo : Page
         txtCongViecChinhDangLam.Text = item.CongViecChinhDangLam;
 
 
+        txtQueQuanTinh.DataSource = es.LoadTinh("TheBinh", "12345678");
+        txtQueQuanTinh.DataBind();
+        txtQueQuanTinh.DataTextField = "NAME";
+        txtQueQuanTinh.DataValueField = "ID";
+        txtQueQuanTinh.DataBind();
+        txtQueQuanTinh.Text = item.QueQuanTinh;
+
+        int t = Convert.ToInt32(txtQueQuanTinh.SelectedItem.Value);
+        txtQueQuanHuyen.DataSource = es.LoadHuyen("TheBinh", "12345678", t);
+        txtQueQuanHuyen.DataBind();
+        txtQueQuanHuyen.DataTextField = "NAME";
+        txtQueQuanHuyen.DataValueField = "ID";
+        txtQueQuanHuyen.DataBind();
+        txtQueQuanHuyen.Text = item.QueQuanHuyen;
+
+        txtQueQuanXa.DataSource = es.LoadXa("TheBinh", "12345678", Common.TryParseObjectToInt(item.QueQuanHuyen));
+        txtQueQuanXa.DataBind();
+        txtQueQuanXa.DataTextField = "NAME";
+        txtQueQuanXa.DataValueField = "ID";
+        txtQueQuanXa.DataBind();
+        txtQueQuanXa.Text = item.QueQuanXa;
     }
 
 
@@ -239,9 +258,13 @@ public partial class ThemSuaCanBo : Page
         item.GioiTinh = txtGioiTinh.Text;
         item.HoKhauThuongTru = txtHoKhauThuongTru.Text;
         item.NoiSinh = txtNoiSinh.Text;
+
+
+
         item.QueQuanTinh = txtQueQuanTinh.Text;
         item.QueQuanHuyen = txtQueQuanHuyen.Text;
         item.QueQuanXa = txtQueQuanXa.Text;
+
         item.NoiOHienNay = txtNoiOHienNay.Text;
         item.DanToc = txtDanToc.Text;
         item.TonGiao = txtTonGiao.Text;
@@ -375,7 +398,7 @@ public partial class ThemSuaCanBo : Page
 
 
         txtNoiSinh.Text = tinh;
-        txtQueQuanTinh.Text = tinh;
+        // txtQueQuanTinh.Text = tinh;
         txtNoiOHienNay.Text = tinh;
 
 
@@ -445,4 +468,27 @@ public partial class ThemSuaCanBo : Page
         }
     }
 
+    protected void txtQueQuanTinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ServiceCanBo es = new ServiceCanBo();
+        int t = Convert.ToInt32(txtQueQuanTinh.SelectedItem.Value);
+        txtQueQuanHuyen.DataSource = es.LoadHuyen("TheBinh", "12345678", t);
+        txtQueQuanHuyen.DataBind();
+        txtQueQuanHuyen.DataTextField = "NAME";
+        txtQueQuanHuyen.DataValueField = "ID";
+        txtQueQuanHuyen.DataBind();
+
+        txtQueQuanXa.DataSource = es.LoadXa("TheBinh", "12345678", t);
+        txtQueQuanXa.DataBind();
+    }
+    protected void txtQueQuanHuyen_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ServiceCanBo es = new ServiceCanBo();
+        int t = Convert.ToInt32(txtQueQuanHuyen.SelectedItem.Value);
+        txtQueQuanXa.DataSource = es.LoadXa("TheBinh", "12345678", t);
+        txtQueQuanXa.DataBind();
+        txtQueQuanXa.DataTextField = "NAME";
+        txtQueQuanXa.DataValueField = "ID";
+        txtQueQuanXa.DataBind();
+    }
 }

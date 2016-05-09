@@ -25,7 +25,7 @@
                         <asp:TextBox ID="txtTenGoiKhac" runat="Server" Width="200px"></asp:TextBox></td>
 
                     <td rowspan="10" style="width: 185px">Ảnh 4x6:
-                        <asp:Image ID="imgAnhDaiDien" runat="server"  Width="350px" />
+                        <asp:Image ID="imgAnhDaiDien" runat="server" Width="350px" />
                         <asp:FileUpload ID="FileUploadControl" runat="server" />
                         <asp:Button runat="server" ID="UploadButton" Text="Tải ảnh lên" OnClick="UploadButton_Click" />
                     </td>
@@ -37,7 +37,7 @@
 
                     <td>Giới tính: </td>
                     <td>
-                        <asp:DropDownList ID="txtGioiTinh" runat="Server" Width="200px" Height="25px"> 
+                        <asp:DropDownList ID="txtGioiTinh" runat="Server" Width="200px" Height="25px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -48,42 +48,52 @@
                 </tr>
                 <tr>
                     <td>Nơi sinh: </td>
-                    <td>
-                        <asp:TextBox ID="txtNoiSinh" runat="Server" Width="200px"></asp:TextBox></td>
+                    <td colspan="3">
+                        <asp:TextBox ID="txtNoiSinh" runat="Server" Width="95%"></asp:TextBox></td>
 
+
+                </tr>
+                <tr>
                     <td>Quê quán Tỉnh: </td>
                     <td>
-                        <asp:TextBox ID="txtQueQuanTinh" runat="Server" Width="200px"></asp:TextBox></td>
+                        <asp:DropDownList ID="txtQueQuanTinh" runat="Server" Width="200px" Height="25px" OnSelectedIndexChanged="txtQueQuanTinh_SelectedIndexChanged"  AutoPostBack="True" >
+                        </asp:DropDownList>
+                    </td>
                 </tr>
                 <tr>
                     <td>Quê quán Huyện: </td>
                     <td>
-                        <asp:TextBox ID="txtQueQuanHuyen" runat="Server" Width="200px"></asp:TextBox></td>
-
+                        <asp:DropDownList ID="txtQueQuanHuyen" runat="Server" Width="200px" Height="25px" OnSelectedIndexChanged="txtQueQuanHuyen_SelectedIndexChanged"  AutoPostBack="True">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
                     <td>Quê quán Xã: </td>
                     <td>
-                        <asp:TextBox ID="txtQueQuanXa" runat="Server" Width="200px"></asp:TextBox></td>
+                        <asp:DropDownList ID="txtQueQuanXa" runat="Server" Width="200px" Height="25px">
+                        </asp:DropDownList>
+                    </td>
                 </tr>
                 <tr>
                     <td>Nơi ở hiện nay: </td>
-                    <td>
-                        <asp:TextBox ID="txtNoiOHienNay" runat="Server" Width="200px"></asp:TextBox></td>
-
+                    <td colspan="3">
+                        <asp:TextBox ID="txtNoiOHienNay" runat="Server" Width="95%"></asp:TextBox></td>
+                </tr>
+                <tr>
                     <td>Dân tộc: </td>
                     <td>
-                        <asp:DropDownList ID="txtDanToc" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtDanToc" runat="Server" Width="200px">
+                        </asp:DropDownList></td>
 
+                    <td>Tôn giáo: </td>
+                    <td>
+                        <asp:DropDownList ID="txtTonGiao" runat="Server" Width="200px">
                         </asp:DropDownList></td>
                 </tr>
                 <tr>
-                    <td>Tôn giáo: </td>
-                    <td>
-                        <asp:DropDownList ID="txtTonGiao" runat="Server" Width="200px"> 
-                        </asp:DropDownList></td>
-
                     <td>Thành phần gia đình: </td>
                     <td>
-                        <asp:DropDownList ID="txtThanhPhanGiaDinh" runat="Server" Width="200px" Height="25px"> 
+                        <asp:DropDownList ID="txtThanhPhanGiaDinh" runat="Server" Width="200px" Height="25px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -122,7 +132,7 @@
                 <tr>
                     <td>Nghề nghiệp khi tuyển dụng: </td>
                     <td>
-                        <asp:DropDownList ID="txtNgheNghiepKhiTuyenDung" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtNgheNghiepKhiTuyenDung" runat="Server" Width="200px">
                         </asp:DropDownList></td>
                 </tr>
                 <tr>
@@ -153,8 +163,7 @@
 
                     <td>Quân hàm cao nhất: </td>
                     <td>
-                        <asp:DropDownList ID="txtQuanHamCaoNhat" runat="Server" Width="200px"> 
-
+                        <asp:DropDownList ID="txtQuanHamCaoNhat" runat="Server" Width="200px">
                         </asp:DropDownList></td>
                 </tr>
             </table>
@@ -165,29 +174,28 @@
                 <tr>
                     <td>Trình độ học vấn: </td>
                     <td>
-                        <asp:DropDownList ID="txtTrinhDoHocVan" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtTrinhDoHocVan" runat="Server" Width="200px">
                         </asp:DropDownList></td>
                     <td>Học hàm: </td>
                     <td>
-                        <asp:DropDownList ID="txtHocHam" runat="Server" Width="200px"> 
-
+                        <asp:DropDownList ID="txtHocHam" runat="Server" Width="200px">
                         </asp:DropDownList></td>
 
                     <td>Học vị: </td>
                     <td>
-                        <asp:DropDownList ID="txtHocVi" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtHocVi" runat="Server" Width="200px">
                         </asp:DropDownList></td>
 
                 </tr>
                 <tr>
                     <td>Trình độ quản lý nhà nước: </td>
                     <td>
-                        <asp:DropDownList ID="txtTrinhDoQuanLyNhaNuoc" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtTrinhDoQuanLyNhaNuoc" runat="Server" Width="200px">
                         </asp:DropDownList></td>
 
                     <td>Trình độ lý luận chính trị: </td>
                     <td>
-                        <asp:DropDownList ID="txtTrinhDoLyLuanChinhTri" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtTrinhDoLyLuanChinhTri" runat="Server" Width="200px">
                         </asp:DropDownList></td>
 
                     <td>Trình độ chuyên môn cao nhất: </td>
@@ -224,7 +232,7 @@
 
                     <td>Công việc chính đang làm: </td>
                     <td>
-                        <asp:DropDownList ID="txtCongViecChinhDangLam" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtCongViecChinhDangLam" runat="Server" Width="200px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -300,7 +308,7 @@
 
                     <td>Tình trạng sức khỏe: </td>
                     <td>
-                        <asp:DropDownList ID="txtTinhTrangSucKhoe" runat="Server" Width="200px"> 
+                        <asp:DropDownList ID="txtTinhTrangSucKhoe" runat="Server" Width="200px">
                         </asp:DropDownList></td>
                 </tr>
             </table>
@@ -311,7 +319,6 @@
                     <td>Là thương binh: </td>
                     <td>
                         <asp:DropDownList ID="txtLaThuongBinh" runat="Server" Width="200px">
-                             
                         </asp:DropDownList></td>
 
                     <td>Số hiệu Cán bộ: </td>
@@ -374,18 +381,7 @@
 
             </table>
         </asp:Panel>
-        <asp:Panel CssClass="cssPanel" ID="PanelThongTinKyLuat" GroupingText="Thông tin kỷ luật" runat="server">
-            <table style="border: none;">
-                <tr>
-                    <td>Ngày bị kỷ luật,: </td>
-                    <td>
-                        <asp:TextBox ID="txtNgayBiKyluat" runat="Server" Width="200px"></asp:TextBox></td>
-                    <td>Lý do kỷ luật: </td>
-                    <td>
-                        <asp:TextBox ID="txtLyDoKyLuat" runat="Server" Width="200px"></asp:TextBox></td>
-                </tr>
-            </table>
-        </asp:Panel>
+       
     </div>
     <div>
         <div class="back">

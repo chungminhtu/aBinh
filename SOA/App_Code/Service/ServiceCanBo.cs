@@ -47,14 +47,14 @@ public class ServiceCanBo : WebService
             {
 
                 return (from k in db.ViewALLCBs
-                        where tk.HoTen != "" ? k.HoTenKhaiSinh.Contains(tk.HoTen) : true
-                            && tk.MaCB != "" ? k.SoHieuCB.Contains(tk.MaCB) : true
-                            && tk.GioiTinh != "" ? k.GioiTinh == tk.GioiTinh : true
-                            && tk.TrinhDoHocVan != "" ? k.TrinhDoHocVan == tk.TrinhDoHocVan : true
-                            && tk.NgheNghiep != "" ? k.NgheNghiepKhiTuyenDung == tk.NgheNghiep : true
-                            && tk.ThanhPhanGiaDinh != "" ? k.ThanhPhanGiaDinh == tk.ThanhPhanGiaDinh : true
-                            && tk.DanToc != "" ? k.DanToc == tk.DanToc : true
-                            && tk.TonGiao != "" ? k.TonGiao == tk.TonGiao : true
+                        where (tk.HoTen != "" ? k.HoTenKhaiSinh.Contains(tk.HoTen) : true)
+                            && (tk.MaCB != "" ? k.SoHieuCB.Contains(tk.MaCB) : true)
+                            && (tk.GioiTinh != "" ? k.GioiTinh == tk.GioiTinh : true)
+                            && (tk.TrinhDoHocVan != "" ? k.TrinhDoHocVan == tk.TrinhDoHocVan : true)
+                            && (tk.NgheNghiep != "" ? k.NgheNghiepKhiTuyenDung == tk.NgheNghiep : true)
+                            && (tk.ThanhPhanGiaDinh != "" ? k.ThanhPhanGiaDinh == tk.ThanhPhanGiaDinh : true)
+                            && (tk.DanToc != "" ? k.DanToc == tk.DanToc : true)
+                            && (tk.TonGiao != "" ? k.TonGiao == tk.TonGiao : true)
                         select k).ToList();
             }
             else
@@ -104,8 +104,9 @@ public class ServiceCanBo : WebService
                 db.SaveChanges();
 
                 CanBo cb = new CanBo();
-                 
+
                 cb.ID = db.SoYeuLyLiches.Max(x => x.ID);
+                cb.KhongLaDangVien = 0;
                 cb.NgheNghiepKhiTuyenDung = kh.NgheNghiepKhiTuyenDung;
                 cb.NgayTuyenDung = kh.NgayTuyenDung;
                 cb.TenCoQuanTuyenDung = kh.TenCoQuanTuyenDung;
@@ -585,9 +586,81 @@ public class ServiceCanBo : WebService
         }
     }
 
-    
 
-  //------------------------------------------------------------------------------
+
+    //------------------------------------------------------------------------------
+    #endregion
+
+    #region DIAPHUONG
+
+    [WebMethod]
+    public List<DiaPhuong> LoadTinh(string username, string password)
+    {
+        try
+        {
+            List<DiaPhuong> dp = new List<DiaPhuong>();
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                dp.Add(new DiaPhuong());
+                dp.AddRange(db.DiaPhuongs.Where(x => x.TYPE == "P").ToList());
+                return dp;
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+
+    [WebMethod]
+    public List<DiaPhuong> LoadHuyen(string username, string password, int? ID)
+    {
+        try
+        {
+            List<DiaPhuong> dp = new List<DiaPhuong>();
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                dp.Add(new DiaPhuong());
+                dp.AddRange(db.DiaPhuongs.Where(x => x.TYPE == "D" && x.ParentID == ID).ToList());
+                return dp;
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+
+    [WebMethod]
+    public List<DiaPhuong> LoadXa(string username, string password, int? ID)
+    {
+        try
+        {
+            authen a = new authen();
+            bool bAuthen = a.fAuthen(username, password);
+            if (bAuthen)
+            {
+                return db.DiaPhuongs.Where(x => x.TYPE == "W" && x.ParentID == ID).ToList();
+            }
+            else
+                return null;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
     #endregion
 }
 

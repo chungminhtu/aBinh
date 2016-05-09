@@ -159,6 +159,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="XoaDangVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaCB" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaDangVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaDangVienResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetThongTin1DangVien">
         <s:complexType>
           <s:sequence>
@@ -195,6 +211,12 @@
   <wsdl:message name="LuuDangVienSoapOut">
     <wsdl:part name="parameters" element="tns:LuuDangVienResponse" />
   </wsdl:message>
+  <wsdl:message name="XoaDangVienSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaDangVien" />
+  </wsdl:message>
+  <wsdl:message name="XoaDangVienSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaDangVienResponse" />
+  </wsdl:message>
   <wsdl:message name="GetThongTin1DangVienSoapIn">
     <wsdl:part name="parameters" element="tns:GetThongTin1DangVien" />
   </wsdl:message>
@@ -213,6 +235,10 @@
     <wsdl:operation name="LuuDangVien">
       <wsdl:input message="tns:LuuDangVienSoapIn" />
       <wsdl:output message="tns:LuuDangVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaDangVien">
+      <wsdl:input message="tns:XoaDangVienSoapIn" />
+      <wsdl:output message="tns:XoaDangVienSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetThongTin1DangVien">
       <wsdl:input message="tns:GetThongTin1DangVienSoapIn" />
@@ -241,6 +267,15 @@
     </wsdl:operation>
     <wsdl:operation name="LuuDangVien">
       <soap:operation soapAction="http://tempuri.org/LuuDangVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaDangVien">
+      <soap:operation soapAction="http://tempuri.org/XoaDangVien" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -280,6 +315,15 @@
     </wsdl:operation>
     <wsdl:operation name="LuuDangVien">
       <soap12:operation soapAction="http://tempuri.org/LuuDangVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaDangVien">
+      <soap12:operation soapAction="http://tempuri.org/XoaDangVien" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
